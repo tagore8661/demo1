@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paragraphs and Line Breaks</title>
+</head>
+<body>
+    <h1>Paragraphs and Line Breaks</h1>
+    
+    <h2>Regular Paragraphs</h2>
+    <p>This is a regular paragraph. HTML automatically adds space before and after paragraphs. Multiple spaces and line breaks in your HTML code are collapsed into single spaces when displayed.</p>
+    
+    <p>This is another paragraph. Notice the space between this paragraph and the previous one.</p>
+    
+    <h2>Line Breaks</h2>
+    <p>This line has a line break<br>right here. The br element creates a single line break.</p>
+    
+    <p>You can use multiple line breaks<br><br>to create more space, but this is not recommended for styling purposes.</p>
+    
+    <h2>Preformatted Text</h2>
+    <p>The pre element preserves both spaces and line breaks:</p>
+    
+    <pre>
+This is preformatted text.
+    It preserves    multiple spaces
+        and line breaks
+            exactly as written.
+    
+    Perfect for:
+    - Code examples
+    - Poetry
+    - ASCII art
+    </pre>
+    
+    <h2>Horizontal Rules</h2>
+    <p>Horizontal rules create thematic breaks in content:</p>
+    
+    <hr>
+    
+    <p>Content above the horizontal rule.</p>
+    
+    <hr>
+    
+    <p>Content below the horizontal rule.</p>
+    
+    <h2>Whitespace Handling</h2>
+    <p>HTML collapses whitespace. This means that:</p>
+    <ul>
+        <li>Multiple spaces become one space</li>
+        <li>Line breaks are ignored (except in pre elements)</li>
+        <li>Tabs are treated as spaces</li>
+    </ul>
+    
+    <p>For example, this text:     has     many     spaces, but they are collapsed to single spaces.</p>
+    
+    <h2>Non-Breaking Space</h2>
+    <p>Use &amp;nbsp; to create spaces that won't break:</p>
+    <p>Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;John Doe</p>
+    <p>Age:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;25 years</p>
+</body>
+</html>

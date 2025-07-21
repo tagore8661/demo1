@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript - Frontend Technology</title>
+</head>
+<body>
+    <nav>
+        <p><a href="../web-dev.html">← Back to Web Development Overview</a> | 
+           <a href="css.html">← Previous: CSS</a> | 
+           <a href="bs.html">Next: Bootstrap →</a></p>
+    </nav>
+    
+    <h1>⚡ JavaScript</h1>
+    
+    <div>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript Logo" width="100" height="100">
+    </div>
+    
+    <h2>What is JavaScript?</h2>
+    <p>JavaScript is a high-level, interpreted programming language that enables interactive web pages. It's an essential part of web applications alongside HTML and CSS, allowing you to create dynamic content, control multimedia, animate images, and much more.</p>
+    
+    <h2>🎯 Key Features of JavaScript</h2>
+    <ul>
+        <li><strong>Dynamic Typing:</strong> Variables can hold different types of values</li>
+        <li><strong>Interpreted Language:</strong> No compilation step required</li>
+        <li><strong>Event-Driven:</strong> Responds to user interactions</li>
+        <li><strong>Prototype-Based:</strong> Object-oriented programming support</li>
+        <li><strong>First-Class Functions:</strong> Functions are treated as values</li>
+        <li><strong>Cross-Platform:</strong> Runs in browsers and servers (Node.js)</li>
+    </ul>
+    
+    <h2>🏗️ JavaScript Basics</h2>
+    
+    <h3>Variables and Data Types:</h3>
+    <pre>
+// Variables
+let name = "John";
+const age = 25;
+var city = "New York";
+
+// Data Types
+let number = 42;           // Number
+let text = "Hello";        // String
+let isActive = true;       // Boolean
+let items = [1, 2, 3];     // Array
+let person = {             // Object
+    name: "Alice",
+    age: 30
+};
+let nothing = null;        // Null
+let undefined_var;         // Undefined
+    </pre>
+    
+    <h3>Functions:</h3>
+    <pre>
+// Function Declaration
+function greet(name) {
+    return "Hello, " + name + "!";
+}
+
+// Function Expression
+const add = function(a, b) {
+    return a + b;
+};
+
+// Arrow Function (ES6)
+const multiply = (a, b) => a * b;
+
+// Function Call
+console.log(greet("World"));
+    </pre>
+    
+    <h2>🎮 DOM Manipulation</h2>
+    <p>JavaScript can interact with HTML elements through the Document Object Model (DOM):</p>
+    
+    <h3>Selecting Elements:</h3>
+    <pre>
+// Select by ID
+const element = document.getElementById("myId");
+
+// Select by Class
+const elements = document.getElementsByClassName("myClass");
+
+// Select by Tag
+const paragraphs = document.getElementsByTagName("p");
+
+// Modern Selectors
+const element = document.querySelector("#myId");
+const elements = document.querySelectorAll(".myClass");
+    </pre>
+    
+    <h3>Modifying Elements:</h3>
+    <pre>
+// Change content
+element.textContent = "New text";
+element.innerHTML = "<strong>Bold text</strong>";
+
+// Change attributes
+element.setAttribute("class", "newClass");
+element.src = "newImage.jpg";
+
+// Change styles
+element.style.color = "red";
+element.style.fontSize = "20px";
+    </pre>
+    
+    <h2>🎭 Event Handling</h2>
+    <p>JavaScript responds to user interactions through events:</p>
+    
+    <h3>Common Events:</h3>
+    <ul>
+        <li><strong>click:</strong> Mouse click</li>
+        <li><strong>mouseover:</strong> Mouse hover</li>
+        <li><strong>keydown:</strong> Key press</li>
+        <li><strong>load:</strong> Page load</li>
+        <li><strong>submit:</strong> Form submission</li>
+        <li><strong>change:</strong> Input value change</li>
+    </ul>
+    
+    <h3>Event Listeners:</h3>
+    <pre>
+// Add event listener
+button.addEventListener("click", function() {
+    alert("Button clicked!");
+});
+
+// Arrow function syntax
+button.addEventListener("click", () => {
+    console.log("Button clicked!");
+});
+
+// Remove event listener
+button.removeEventListener("click", myFunction);
+    </pre>
+    
+    <h2>🔄 Control Structures</h2>
+    
+    <h3>Conditional Statements:</h3>
+    <pre>
+// If statement
+if (age >= 18) {
+    console.log("Adult");
+} else if (age >= 13) {
+    console.log("Teenager");
+} else {
+    console.log("Child");
+}
+
+// Switch statement
+switch (day) {
+    case "Monday":
+        console.log("Start of work week");
+        break;
+    case "Friday":
+        console.log("TGIF!");
+        break;
+    default:
+        console.log("Regular day");
+}
+
+// Ternary operator
+const message = age >= 18 ? "Adult" : "Minor";
+    </pre>
+    
+    <h3>Loops:</h3>
+    <pre>
+// For loop
+for (let i = 0; i < 5; i++) {
+    console.log(i);
+}
+
+// While loop
+let count = 0;
+while (count < 5) {
+    console.log(count);
+    count++;
+}
+
+// For...of loop (arrays)
+for (const item of items) {
+    console.log(item);
+}
+
+// For...in loop (objects)
+for (const key in person) {
+    console.log(key + ": " + person[key]);
+}
+    </pre>
+    
+    <h2>📦 Arrays and Objects</h2>
+    
+    <h3>Array Methods:</h3>
+    <pre>
+let fruits = ["apple", "banana", "orange"];
+
+// Add elements
+fruits.push("grape");        // Add to end
+fruits.unshift("mango");     // Add to beginning
+
+// Remove elements
+fruits.pop();                // Remove from end
+fruits.shift();              // Remove from beginning
+
+// Array methods
+fruits.forEach(fruit => console.log(fruit));
+const upperFruits = fruits.map(fruit => fruit.toUpperCase());
+const longFruits = fruits.filter(fruit => fruit.length > 5);
+    </pre>
+    
+    <h3>Object Operations:</h3>
+    <pre>
+let person = {
+    name: "John",
+    age: 30,
+    city: "New York"
+};
+
+// Access properties
+console.log(person.name);        // Dot notation
+console.log(person["age"]);      // Bracket notation
+
+// Add/modify properties
+person.email = "john@email.com";
+person.age = 31;
+
+// Object methods
+const keys = Object.keys(person);
+const values = Object.values(person);
+const entries = Object.entries(person);
+    </pre>
+    
+    <h2>🚀 Modern JavaScript (ES6+)</h2>
+    
+    <h3>Template Literals:</h3>
+    <pre>
+const name = "Alice";
+const age = 25;
+const message = `Hello, my name is ${name} and I'm ${age} years old.`;
+    </pre>
+    
+    <h3>Destructuring:</h3>
+    <pre>
+// Array destructuring
+const [first, second] = [1, 2, 3];
+
+// Object destructuring
+const {name, age} = person;
+    </pre>
+    
+    <h3>Spread Operator:</h3>
+    <pre>
+// Array spread
+const newArray = [...oldArray, 4, 5];
+
+// Object spread
+const newPerson = {...person, email: "new@email.com"};
+    </pre>
+    
+    <h3>Promises and Async/Await:</h3>
+    <pre>
+// Promise
+fetch("https://api.example.com/data")
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error(error));
+
+// Async/Await
+async function fetchData() {
+    try {
+        const response = await fetch("https://api.example.com/data");
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error(error);
+    }
+}
+    </pre>
+    
+    <h2>🛠️ JavaScript Frameworks and Libraries</h2>
+    
+    <h3>Popular Frontend Frameworks:</h3>
+    <ul>
+        <li><strong>React:</strong> Component-based library by Facebook</li>
+        <li><strong>Vue.js:</strong> Progressive framework for building UIs</li>
+        <li><strong>Angular:</strong> Full-featured framework by Google</li>
+        <li><strong>Svelte:</strong> Compile-time framework</li>
+    </ul>
+    
+    <h3>Utility Libraries:</h3>
+    <ul>
+        <li><strong>jQuery:</strong> DOM manipulation and AJAX</li>
+        <li><strong>Lodash:</strong> Utility functions</li>
+        <li><strong>Moment.js:</strong> Date manipulation</li>
+        <li><strong>Axios:</strong> HTTP client</li>
+    </ul>
+    
+    <h2>🔧 JavaScript Tools</h2>
+    
+    <h3>Development Tools:</h3>
+    <ul>
+        <li><strong>Node.js:</strong> JavaScript runtime for servers</li>
+        <li><strong>npm/yarn:</strong> Package managers</li>
+        <li><strong>Webpack:</strong> Module bundler</li>
+        <li><strong>Babel:</strong> JavaScript compiler</li>
+        <li><strong>ESLint:</strong> Code linting tool</li>
+        <li><strong>Prettier:</strong> Code formatter</li>
+    </ul>
+    
+    <h3>Testing Frameworks:</h3>
+    <ul>
+        <li><strong>Jest:</strong> JavaScript testing framework</li>
+        <li><strong>Mocha:</strong> Feature-rich test framework</li>
+        <li><strong>Cypress:</strong> End-to-end testing</li>
+        <li><strong>Jasmine:</strong> Behavior-driven testing</li>
+    </ul>
+    
+    <h2>📱 JavaScript Applications</h2>
+    
+    <h3>Frontend Development:</h3>
+    <ul>
+        <li>Interactive web pages</li>
+        <li>Single Page Applications (SPAs)</li>
+        <li>Progressive Web Apps (PWAs)</li>
+        <li>Web animations and games</li>
+    </ul>
+    
+    <h3>Backend Development:</h3>
+    <ul>
+        <li><a href="../Back-End/nodejs.html">Node.js server applications →</a></li>
+        <li>REST APIs and GraphQL</li>
+        <li>Real-time applications (WebSockets)</li>
+        <li>Microservices</li>
+    </ul>
+    
+    <h3>Mobile Development:</h3>
+    <ul>
+        <li>React Native apps</li>
+        <li>Ionic applications</li>
+        <li>Cordova/PhoneGap apps</li>
+    </ul>
+    
+    <h2>📖 JavaScript Best Practices</h2>
+    <ol>
+        <li><strong>Use strict mode:</strong> "use strict" at the top of files</li>
+        <li><strong>Declare variables properly:</strong> Use let/const instead of var</li>
+        <li><strong>Use meaningful names:</strong> Clear variable and function names</li>
+        <li><strong>Handle errors:</strong> Use try-catch blocks</li>
+        <li><strong>Avoid global variables:</strong> Use modules and proper scoping</li>
+        <li><strong>Comment your code:</strong> Explain complex logic</li>
+        <li><strong>Use consistent formatting:</strong> Follow style guides</li>
+        <li><strong>Optimize performance:</strong> Avoid unnecessary DOM manipulation</li>
+    </ol>
+    
+    <h2>📖 Learning Resources</h2>
+    <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">MDN JavaScript Documentation</a></li>
+        <li><a href="https://javascript.info/" target="_blank">The Modern JavaScript Tutorial</a></li>
+        <li><a href="https://www.w3schools.com/js/" target="_blank">W3Schools JavaScript Tutorial</a></li>
+        <li><a href="https://eloquentjavascript.net/" target="_blank">Eloquent JavaScript (Book)</a></li>
+        <li><a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp JavaScript Course</a></li>
+        <li><a href="https://www.codecademy.com/learn/introduction-to-javascript" target="_blank">Codecademy JavaScript Course</a></li>
+    </ul>
+    
+    <h2>💡 Why Learn JavaScript?</h2>
+    <ul>
+        <li><strong>Versatility:</strong> Frontend, backend, mobile, and desktop development</li>
+        <li><strong>High Demand:</strong> Most popular programming language</li>
+        <li><strong>Large Community:</strong> Extensive resources and support</li>
+        <li><strong>Rapid Development:</strong> Quick prototyping and iteration</li>
+        <li><strong>Career Opportunities:</strong> Essential for web development jobs</li>
+        <li><strong>Continuous Evolution:</strong> Regular updates and new features</li>
+    </ul>
+    
+    <h2>🔗 Related Technologies</h2>
+    <ul>
+        <li><a href="html.html">← HTML - Structure and Content</a></li>
+        <li><a href="css.html">← CSS - Styling and Layout</a></li>
+        <li><a href="bs.html">Bootstrap - CSS Framework →</a></li>
+        <li><a href="../Back-End/nodejs.html">Node.js - Server-side JavaScript →</a></li>
+    </ul>
+    
+    <hr>
+    
+    <footer>
+        <p><strong>Navigation:</strong></p>
+        <ul>
+            <li><a href="../web-dev.html">← Back to Web Development Overview</a></li>
+            <li><a href="css.html">← Previous: CSS</a></li>
+            <li><a href="bs.html">Next: Learn Bootstrap →</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic HTML Forms</title>
+</head>
+<body>
+    <h1>Basic HTML Forms</h1>
+    
+    <h2>What are HTML Forms?</h2>
+    <p>HTML forms are used to collect user input and send it to a server for processing. Forms are essential for user interaction on websites, including login pages, contact forms, surveys, and e-commerce checkout processes.</p>
+    
+    <h2>Basic Form Structure</h2>
+    <p>Every HTML form starts with the <strong>&lt;form&gt;</strong> element:</p>
+    <pre>
+&lt;form action="/submit" method="post"&gt;
+    &lt;!-- Form elements go here --&gt;
+&lt;/form&gt;
+    </pre>
+    
+    <h2>Simple Contact Form</h2>
+    <form action="#" method="post">
+        <h3>Contact Us</h3>
+        
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea>
+        <br><br>
+        
+        <input type="submit" value="Send Message">
+        <input type="reset" value="Clear Form">
+    </form>
+    
+    <h2>User Registration Form</h2>
+    <form action="#" method="post">
+        <h3>Create Account</h3>
+        
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" minlength="3" maxlength="20" required>
+        <br><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" minlength="8" required>
+        <br><br>
+        
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" name="confirm-password" required>
+        <br><br>
+        
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="13" max="120" required>
+        <br><br>
+        
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+            <option value="prefer-not-to-say">Prefer not to say</option>
+        </select>
+        <br><br>
+        
+        <input type="checkbox" id="terms" name="terms" required>
+        <label for="terms">I agree to the Terms and Conditions</label>
+        <br><br>
+        
+        <input type="checkbox" id="newsletter" name="newsletter">
+        <label for="newsletter">Subscribe to our newsletter</label>
+        <br><br>
+        
+        <input type="submit" value="Create Account">
+    </form>
+    
+    <h2>Survey Form</h2>
+    <form action="#" method="post">
+        <h3>Customer Satisfaction Survey</h3>
+        
+        <label for="customer-name">Your Name:</label>
+        <input type="text" id="customer-name" name="customer-name">
+        <br><br>
+        
+        <fieldset>
+            <legend>How satisfied are you with our service?</legend>
+            <input type="radio" id="very-satisfied" name="satisfaction" value="very-satisfied">
+            <label for="very-satisfied">Very Satisfied</label><br>
+            
+            <input type="radio" id="satisfied" name="satisfaction" value="satisfied">
+            <label for="satisfied">Satisfied</label><br>
+            
+            <input type="radio" id="neutral" name="satisfaction" value="neutral">
+            <label for="neutral">Neutral</label><br>
+            
+            <input type="radio" id="dissatisfied" name="satisfaction" value="dissatisfied">
+            <label for="dissatisfied">Dissatisfied</label><br>
+            
+            <input type="radio" id="very-dissatisfied" name="satisfaction" value="very-dissatisfied">
+            <label for="very-dissatisfied">Very Dissatisfied</label>
+        </fieldset>
+        <br>
+        
+        <fieldset>
+            <legend>Which features do you use? (Select all that apply)</legend>
+            <input type="checkbox" id="feature1" name="features" value="online-ordering">
+            <label for="feature1">Online Ordering</label><br>
+            
+            <input type="checkbox" id="feature2" name="features" value="customer-support">
+            <label for="feature2">Customer Support</label><br>
+            
+            <input type="checkbox" id="feature3" name="features" value="mobile-app">
+            <label for="feature3">Mobile App</label><br>
+            
+            <input type="checkbox" id="feature4" name="features" value="loyalty-program">
+            <label for="feature4">Loyalty Program</label><br>
+        </fieldset>
+        <br>
+        
+        <label for="improvements">What improvements would you suggest?</label><br>
+        <textarea id="improvements" name="improvements" rows="5" cols="60" placeholder="Please share your suggestions..."></textarea>
+        <br><br>
+        
+        <label for="rating">Rate us (1-10):</label>
+        <input type="range" id="rating" name="rating" min="1" max="10" value="5">
+        <output for="rating">5</output>
+        <br><br>
+        
+        <input type="submit" value="Submit Survey">
+    </form>
+    
+    <h2>Job Application Form</h2>
+    <form action="#" method="post" enctype="multipart/form-data">
+        <h3>Job Application</h3>
+        
+        <label for="applicant-name">Full Name:</label>
+        <input type="text" id="applicant-name" name="applicant-name" required>
+        <br><br>
+        
+        <label for="applicant-email">Email Address:</label>
+        <input type="email" id="applicant-email" name="applicant-email" required>
+        <br><br>
+        
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890">
+        <br><br>
+        
+        <label for="position">Position Applied For:</label>
+        <select id="position" name="position" required>
+            <option value="">Select Position</option>
+            <option value="frontend-developer">Frontend Developer</option>
+            <option value="backend-developer">Backend Developer</option>
+            <option value="fullstack-developer">Full-Stack Developer</option>
+            <option value="ui-designer">UI Designer</option>
+            <option value="project-manager">Project Manager</option>
+        </select>
+        <br><br>
+        
+        <label for="experience">Years of Experience:</label>
+        <select id="experience" name="experience">
+            <option value="0-1">0-1 years</option>
+            <option value="2-3">2-3 years</option>
+            <option value="4-5">4-5 years</option>
+            <option value="6-10">6-10 years</option>
+            <option value="10+">10+ years</option>
+        </select>
+        <br><br>
+        
+        <label for="salary">Expected Salary:</label>
+        <input type="number" id="salary" name="salary" min="0" step="1000" placeholder="50000">
+        <br><br>
+        
+        <label for="start-date">Available Start Date:</label>
+        <input type="date" id="start-date" name="start-date">
+        <br><br>
+        
+        <label for="resume">Upload Resume:</label>
+        <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx">
+        <br><br>
+        
+        <label for="cover-letter">Cover Letter:</label><br>
+        <textarea id="cover-letter" name="cover-letter" rows="6" cols="60" placeholder="Tell us why you're interested in this position..."></textarea>
+        <br><br>
+        
+        <fieldset>
+            <legend>Availability</legend>
+            <input type="checkbox" id="full-time" name="availability" value="full-time">
+            <label for="full-time">Full-time</label><br>
+            
+            <input type="checkbox" id="part-time" name="availability" value="part-time">
+            <label for="part-time">Part-time</label><br>
+            
+            <input type="checkbox" id="remote" name="availability" value="remote">
+            <label for="remote">Remote work</label><br>
+            
+            <input type="checkbox" id="contract" name="availability" value="contract">
+            <label for="contract">Contract work</label>
+        </fieldset>
+        <br>
+        
+        <input type="submit" value="Submit Application">
+        <input type="reset" value="Clear Form">
+    </form>
+    
+    <h2>Form Elements Explained</h2>
+    
+    <h3>Form Element (&lt;form&gt;)</h3>
+    <ul>
+        <li><strong>action:</strong> URL where form data is sent</li>
+        <li><strong>method:</strong> HTTP method (GET or POST)</li>
+        <li><strong>enctype:</strong> Encoding type for form data</li>
+        <li><strong>target:</strong> Where to display response</li>
+    </ul>
+    
+    <h3>Input Element (&lt;input&gt;)</h3>
+    <ul>
+        <li><strong>type:</strong> Specifies input type (text, email, password, etc.)</li>
+        <li><strong>name:</strong> Name for form submission</li>
+        <li><strong>id:</strong> Unique identifier</li>
+        <li><strong>value:</strong> Default value</li>
+        <li><strong>placeholder:</strong> Hint text</li>
+        <li><strong>required:</strong> Makes field mandatory</li>
+    </ul>
+    
+    <h3>Label Element (&lt;label&gt;)</h3>
+    <ul>
+        <li><strong>for:</strong> Associates label with input (matches input's id)</li>
+        <li>Improves accessibility</li>
+        <li>Clicking label focuses associated input</li>
+    </ul>
+    
+    <h3>Textarea Element (&lt;textarea&gt;)</h3>
+    <ul>
+        <li><strong>rows:</strong> Number of visible text lines</li>
+        <li><strong>cols:</strong> Number of visible character widths</li>
+        <li>Used for multi-line text input</li>
+    </ul>
+    
+    <h3>Select Element (&lt;select&gt;)</h3>
+    <ul>
+        <li>Creates dropdown menus</li>
+        <li>Contains &lt;option&gt; elements</li>
+        <li><strong>multiple:</strong> Allows multiple selections</li>
+        <li><strong>size:</strong> Number of visible options</li>
+    </ul>
+    
+    <h3>Fieldset and Legend</h3>
+    <ul>
+        <li><strong>&lt;fieldset&gt;:</strong> Groups related form elements</li>
+        <li><strong>&lt;legend&gt;:</strong> Provides caption for fieldset</li>
+        <li>Improves form organization and accessibility</li>
+    </ul>
+    
+    <h2>Form Attributes</h2>
+    
+    <h3>Common Input Attributes:</h3>
+    <ul>
+        <li><strong>required:</strong> Field must be filled</li>
+        <li><strong>disabled:</strong> Disables the input</li>
+        <li><strong>readonly:</strong> Makes input read-only</li>
+        <li><strong>autofocus:</strong> Automatically focuses on page load</li>
+        <li><strong>autocomplete:</strong> Controls browser autocomplete</li>
+        <li><strong>pattern:</strong> Regular expression for validation</li>
+        <li><strong>min/max:</strong> Minimum/maximum values</li>
+        <li><strong>minlength/maxlength:</strong> Character length limits</li>
+    </ul>
+    
+    <h2>Form Submission Methods</h2>
+    
+    <h3>GET Method:</h3>
+    <ul>
+        <li>Data is sent in URL parameters</li>
+        <li>Visible in browser address bar</li>
+        <li>Limited data size</li>
+        <li>Good for search forms</li>
+        <li>Can be bookmarked</li>
+    </ul>
+    
+    <h3>POST Method:</h3>
+    <ul>
+        <li>Data is sent in request body</li>
+        <li>Not visible in URL</li>
+        <li>No size limitations</li>
+        <li>Good for sensitive data</li>
+        <li>Cannot be bookmarked</li>
+    </ul>
+    
+    <h2>Accessibility Best Practices</h2>
+    <ol>
+        <li><strong>Always use labels:</strong> Associate labels with form controls</li>
+        <li><strong>Provide clear instructions:</strong> Explain required fields and formats</li>
+        <li><strong>Use fieldsets:</strong> Group related form elements</li>
+        <li><strong>Error handling:</strong> Provide clear error messages</li>
+        <li><strong>Keyboard navigation:</strong> Ensure forms work with keyboard only</li>
+        <li><strong>Focus indicators:</strong> Make focus states visible</li>
+        <li><strong>Logical tab order:</strong> Ensure logical navigation flow</li>
+    </ol>
+    
+    <h2>Form Validation</h2>
+    <p>HTML5 provides built-in validation for many input types:</p>
+    <ul>
+        <li><strong>required:</strong> Field must be filled</li>
+        <li><strong>pattern:</strong> Must match regular expression</li>
+        <li><strong>min/max:</strong> Numeric range validation</li>
+        <li><strong>minlength/maxlength:</strong> Text length validation</li>
+        <li><strong>type-specific:</strong> Email, URL, number validation</li>
+    </ul>
+    
+    <h2>Example: Complete Registration Form</h2>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>Personal Information</legend>
+            
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first-name" required>
+            <br><br>
+            
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" name="last-name" required>
+            <br><br>
+            
+            <label for="birth-date">Date of Birth:</label>
+            <input type="date" id="birth-date" name="birth-date" required>
+            <br><br>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Contact Information</legend>
+            
+            <label for="user-email">Email:</label>
+            <input type="email" id="user-email" name="user-email" required>
+            <br><br>
+            
+            <label for="user-phone">Phone:</label>
+            <input type="tel" id="user-phone" name="user-phone">
+            <br><br>
+            
+            <label for="website">Website:</label>
+            <input type="url" id="website" name="website" placeholder="https://example.com">
+            <br><br>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Account Settings</legend>
+            
+            <label for="user-password">Password:</label>
+            <input type="password" id="user-password" name="user-password" minlength="8" required>
+            <br><br>
+            
+            <label for="confirm-user-password">Confirm Password:</label>
+            <input type="password" id="confirm-user-password" name="confirm-user-password" required>
+            <br><br>
+        </fieldset>
+        
+        <input type="submit" value="Register">
+        <input type="reset" value="Reset Form">
+    </form>
+</body>
+</html>

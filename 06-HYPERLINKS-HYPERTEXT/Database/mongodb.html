@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn MongoDB - Database Technology</title>
+</head>
+<body>
+    <nav>
+        <p><a href="../web-dev.html">← Back to Web Development Overview</a> | 
+           <a href="mysql.html">← Previous: MySQL</a> | 
+           <a href="../single-page-navigation.html">Single Page Navigation →</a></p>
+    </nav>
+    
+    <h1>🍃 MongoDB</h1>
+    
+    <div>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB Logo" width="100" height="100">
+    </div>
+    
+    <h2>What is MongoDB?</h2>
+    <p>MongoDB is a popular NoSQL document database that stores data in flexible, JSON-like documents. Unlike traditional relational databases, MongoDB doesn't require a predefined schema, making it ideal for applications with evolving data requirements. It's designed for scalability, performance, and developer productivity.</p>
+    
+    <h2>🎯 Key Features of MongoDB</h2>
+    <ul>
+        <li><strong>Document-Oriented:</strong> Stores data in BSON (Binary JSON) documents</li>
+        <li><strong>Schema-less:</strong> No predefined schema required</li>
+        <li><strong>Scalable:</strong> Horizontal scaling with sharding</li>
+        <li><strong>High Performance:</strong> Fast read and write operations</li>
+        <li><strong>Rich Query Language:</strong> Powerful query and aggregation capabilities</li>
+        <li><strong>Indexing:</strong> Support for various index types</li>
+        <li><strong>Replication:</strong> Built-in replication for high availability</li>
+    </ul>
+    
+    <h2>🏗️ MongoDB Basics</h2>
+    
+    <h3>Key Concepts:</h3>
+    <ul>
+        <li><strong>Database:</strong> Container for collections</li>
+        <li><strong>Collection:</strong> Group of documents (like a table in SQL)</li>
+        <li><strong>Document:</strong> A record in BSON format (like a row in SQL)</li>
+        <li><strong>Field:</strong> A key-value pair in a document (like a column in SQL)</li>
+        <li><strong>_id:</strong> Unique identifier for each document</li>
+    </ul>
+    
+    <h3>Document Structure:</h3>
+    <pre>
+{
+  "_id": ObjectId("507f1f77bcf86cd799439011"),
+  "name": "John Doe",
+  "email": "john@example.com",
+  "age": 30,
+  "address": {
+    "street": "123 Main St",
+    "city": "New York",
+    "zipcode": "10001"
+  },
+  "hobbies": ["reading", "swimming", "coding"],
+  "created_at": ISODate("2023-01-15T10:30:00Z")
+}
+    </pre>
+    
+    <h2>🔍 MongoDB Operations (CRUD)</h2>
+    
+    <h3>CREATE - Inserting Documents:</h3>
+    <pre>
+// Insert single document
+db.users.insertOne({
+  name: "Alice Smith",
+  email: "alice@example.com",
+  age: 28,
+  city: "Los Angeles"
+});
+
+// Insert multiple documents
+db.users.insertMany([
+  {
+    name: "Bob Johnson",
+    email: "bob@example.com",
+    age: 35,
+    city: "Chicago"
+  },
+  {
+    name: "Carol Davis",
+    email: "carol@example.com",
+    age: 32,
+    city: "Houston"
+  }
+]);
+
+// Insert with custom _id
+db.users.insertOne({
+  _id: "user001",
+  name: "David Wilson",
+  email: "david@example.com",
+  age: 29
+});
+    </pre>
+    
+    <h3>READ - Querying Documents:</h3>
+    <pre>
+// Find all documents
+db.users.find();
+
+// Find with condition
+db.users.find({ age: { $gt: 30 } });
+
+// Find one document
+db.users.findOne({ email: "alice@example.com" });
+
+// Find with multiple conditions
+db.users.find({
+  age: { $gte: 25, $lte: 35 },
+  city: "New York"
+});
+
+// Find with projection (select specific fields)
+db.users.find(
+  { age: { $gt: 25 } },
+  { name: 1, email: 1, _id: 0 }
+);
+
+// Find with sorting
+db.users.find().sort({ age: -1 });
+
+// Find with limit and skip
+db.users.find().limit(5).skip(10);
+
+// Find with regex
+db.users.find({ name: { $regex: /^J/, $options: "i" } });
+    </pre>
+    
+    <h3>UPDATE - Modifying Documents:</h3>
+    <pre>
+// Update single document
+db.users.updateOne(
+  { email: "alice@example.com" },
+  { $set: { age: 29, city: "San Francisco" } }
+);
+
+// Update multiple documents
+db.users.updateMany(
+  { city: "New York" },
+  { $inc: { age: 1 } }
+);
+
+// Replace entire document
+db.users.replaceOne(
+  { email: "bob@example.com" },
+  {
+    name: "Robert Johnson",
+    email: "robert@example.com",
+    age: 36,
+    city: "Miami"
+  }
+);
+
+// Update with upsert (insert if not exists)
+db.users.updateOne(
+  { email: "new@example.com" },
+  { $set: { name: "New User", age: 25 } },
+  { upsert: true }
+);
+
+// Update array elements
+db.users.updateOne(
+  { email: "alice@example.com" },
+  { $push: { hobbies: "photography" } }
+);
+    </pre>
+    
+    <h3>DELETE - Removing Documents:</h3>
+    <pre>
+// Delete single document
+db.users.deleteOne({ email: "alice@example.com" });
+
+// Delete multiple documents
+db.users.deleteMany({ age: { $lt: 18 } });
+
+// Delete all documents in collection
+db.users.deleteMany({});
+
+// Drop entire collection
+db.users.drop();
+    </pre>
+    
+    <h2>🔍 Advanced Querying</h2>
+    
+    <h3>Query Operators:</h3>
+    <pre>
+// Comparison operators
+db.users.find({ age: { $eq: 30 } });     // Equal
+db.users.find({ age: { $ne: 30 } });     // Not equal
+db.users.find({ age: { $gt: 25 } });     // Greater than
+db.users.find({ age: { $gte: 25 } });    // Greater than or equal
+db.users.find({ age: { $lt: 35 } });     // Less than
+db.users.find({ age: { $lte: 35 } });    // Less than or equal
+db.users.find({ age: { $in: [25, 30, 35] } }); // In array
+db.users.find({ age: { $nin: [25, 30] } }); // Not in array
+
+// Logical operators
+db.users.find({
+  $and: [
+    { age: { $gte: 25 } },
+    { city: "New York" }
+  ]
+});
+
+db.users.find({
+  $or: [
+    { age: { $lt: 25 } },
+    { city: "Los Angeles" }
+  ]
+});
+
+db.users.find({ age: { $not: { $lt: 30 } } });
+
+// Element operators
+db.users.find({ phone: { $exists: true } });
+db.users.find({ age: { $type: "number" } });
+
+// Array operators
+db.users.find({ hobbies: { $all: ["reading", "swimming"] } });
+db.users.find({ hobbies: { $size: 3 } });
+db.users.find({ "scores.0": { $gt: 85 } });
+    </pre>
+    
+    <h3>Aggregation Pipeline:</h3>
+    <pre>
+// Basic aggregation
+db.users.aggregate([
+  { $match: { age: { $gte: 25 } } },
+  { $group: { _id: "$city", count: { $sum: 1 } } },
+  { $sort: { count: -1 } }
+]);
+
+// Complex aggregation
+db.orders.aggregate([
+  { $match: { status: "completed" } },
+  { $lookup: {
+      from: "users",
+      localField: "user_id",
+      foreignField: "_id",
+      as: "user"
+    }
+  },
+  { $unwind: "$user" },
+  { $group: {
+      _id: "$user.city",
+      totalSales: { $sum: "$amount" },
+      avgOrderValue: { $avg: "$amount" },
+      orderCount: { $sum: 1 }
+    }
+  },
+  { $project: {
+      city: "$_id",
+      totalSales: 1,
+      avgOrderValue: { $round: ["$avgOrderValue", 2] },
+      orderCount: 1,
+      _id: 0
+    }
+  },
+  { $sort: { totalSales: -1 } }
+]);
+    </pre>
+    
+    <h2>📊 Indexing in MongoDB</h2>
+    
+    <h3>Creating Indexes:</h3>
+    <pre>
+// Single field index
+db.users.createIndex({ email: 1 });
+
+// Compound index
+db.users.createIndex({ city: 1, age: -1 });
+
+// Text index for search
+db.posts.createIndex({ title: "text", content: "text" });
+
+// Partial index
+db.users.createIndex(
+  { email: 1 },
+  { partialFilterExpression: { age: { $gte: 18 } } }
+);
+
+// TTL index (Time To Live)
+db.sessions.createIndex(
+  { createdAt: 1 },
+  { expireAfterSeconds: 3600 }
+);
+
+// Unique index
+db.users.createIndex({ email: 1 }, { unique: true });
+
+// Show indexes
+db.users.getIndexes();
+
+// Drop index
+db.users.dropIndex({ email: 1 });
+    </pre>
+    
+    <h2>🌐 MongoDB with Web Applications</h2>
+    
+    <h3>Node.js with Mongoose:</h3>
+    <pre>
+const mongoose = require('mongoose');
+
+// Connect to MongoDB
+mongoose.connect('mongodb://localhost:27017/myapp');
+
+// Define schema
+const userSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  age: { type: Number, min: 0, max: 120 },
+  city: String,
+  hobbies: [String],
+  createdAt: { type: Date, default: Date.now }
+});
+
+// Create model
+const User = mongoose.model('User', userSchema);
+
+// Create user
+const user = new User({
+  name: 'John Doe',
+  email: 'john@example.com',
+  age: 30,
+  city: 'New York'
+});
+
+await user.save();
+
+// Find users
+const users = await User.find({ age: { $gte: 25 } });
+
+// Update user
+await User.updateOne(
+  { email: 'john@example.com' },
+  { $set: { age: 31 } }
+);
+
+// Delete user
+await User.deleteOne({ email: 'john@example.com' });
+    </pre>
+    
+    <h3>Python with PyMongo:</h3>
+    <pre>
+from pymongo import MongoClient
+from datetime import datetime
+
+# Connect to MongoDB
+client = MongoClient('mongodb://localhost:27017/')
+db = client['myapp']
+collection = db['users']
+
+# Insert document
+user = {
+    "name": "Jane Doe",
+    "email": "jane@example.com",
+    "age": 28,
+    "city": "Los Angeles",
+    "created_at": datetime.now()
+}
+result = collection.insert_one(user)
+print(f"Inserted ID: {result.inserted_id}")
+
+# Find documents
+users = collection.find({"age": {"$gte": 25}})
+for user in users:
+    print(user)
+
+# Update document
+collection.update_one(
+    {"email": "jane@example.com"},
+    {"$set": {"age": 29}}
+)
+
+# Delete document
+collection.delete_one({"email": "jane@example.com"})
+    </pre>
+    
+    <h2>🔐 Security and Authentication</h2>
+    
+    <h3>User Management:</h3>
+    <pre>
+// Create admin user
+use admin
+db.createUser({
+  user: "admin",
+  pwd: "strong_password",
+  roles: ["userAdminAnyDatabase", "dbAdminAnyDatabase"]
+});
+
+// Create database user
+use myapp
+db.createUser({
+  user: "appuser",
+  pwd: "app_password",
+  roles: [
+    { role: "readWrite", db: "myapp" }
+  ]
+});
+
+// Show users
+db.getUsers();
+
+// Update user
+db.updateUser("appuser", {
+  roles: [
+    { role: "read", db: "myapp" }
+  ]
+});
+
+// Drop user
+db.dropUser("appuser");
+    </pre>
+    
+    <h3>Security Best Practices:</h3>
+    <ul>
+        <li><strong>Enable authentication:</strong> Always use authentication in production</li>
+        <li><strong>Use strong passwords:</strong> Complex passwords for database users</li>
+        <li><strong>Network security:</strong> Bind to specific IP addresses</li>
+        <li><strong>SSL/TLS:</strong> Use encrypted connections</li>
+        <li><strong>Regular updates:</strong> Keep MongoDB updated</li>
+        <li><strong>Backup regularly:</strong> Implement backup strategy</li>
+        <li><strong>Monitor access:</strong> Log and monitor database access</li>
+    </ul>
+    
+    <h2>💾 Backup and Recovery</h2>
+    
+    <h3>Backup Commands:</h3>
+    <pre>
+# Backup entire database
+mongodump --db myapp --out /backup/
+
+# Backup specific collection
+mongodump --db myapp --collection users --out /backup/
+
+# Backup with authentication
+mongodump --host localhost:27017 --username admin --password --authenticationDatabase admin --db myapp --out /backup/
+
+# Backup to archive
+mongodump --db myapp --archive=myapp_backup.archive
+
+# Backup with compression
+mongodump --db myapp --gzip --out /backup/
+    </pre>
+    
+    <h3>Restore Commands:</h3>
+    <pre>
+# Restore database
+mongorestore --db myapp /backup/myapp/
+
+# Restore specific collection
+mongorestore --db myapp --collection users /backup/myapp/users.bson
+
+# Restore from archive
+mongorestore --archive=myapp_backup.archive
+
+# Restore with drop (replace existing)
+mongorestore --db myapp --drop /backup/myapp/
+    </pre>
+    
+    <h2>⚡ Performance Optimization</h2>
+    
+    <h3>Query Performance:</h3>
+    <pre>
+// Explain query execution
+db.users.find({ age: { $gt: 25 } }).explain("executionStats");
+
+// Create efficient indexes
+db.users.createIndex({ age: 1, city: 1 });
+
+// Use projection to limit returned fields
+db.users.find(
+  { age: { $gt: 25 } },
+  { name: 1, email: 1, _id: 0 }
+);
+
+// Use limit for large result sets
+db.users.find({ city: "New York" }).limit(100);
+
+// Optimize aggregation pipelines
+db.users.aggregate([
+  { $match: { age: { $gte: 25 } } }, // Filter early
+  { $project: { name: 1, age: 1 } }, // Project only needed fields
+  { $sort: { age: -1 } },
+  { $limit: 10 }
+]);
+    </pre>
+    
+    <h3>Database Performance:</h3>
+    <ul>
+        <li><strong>Proper indexing:</strong> Create indexes for frequently queried fields</li>
+        <li><strong>Query optimization:</strong> Use explain() to analyze queries</li>
+        <li><strong>Connection pooling:</strong> Reuse database connections</li>
+        <li><strong>Sharding:</strong> Distribute data across multiple servers</li>
+        <li><strong>Replication:</strong> Use replica sets for read scaling</li>
+        <li><strong>Memory management:</strong> Ensure adequate RAM for working set</li>
+    </ul>
+    
+    <h2>🔧 MongoDB Best Practices</h2>
+    <ol>
+        <li><strong>Design for your queries:</strong> Structure documents based on access patterns</li>
+        <li><strong>Embed vs Reference:</strong> Choose appropriate data modeling strategy</li>
+        <li><strong>Use appropriate data types:</strong> Choose efficient BSON types</li>
+        <li><strong>Index strategically:</strong> Create indexes for query performance</li>
+        <li><strong>Avoid large documents:</strong> Keep documents under 16MB limit</li>
+        <li><strong>Use aggregation pipeline:</strong> For complex data processing</li>
+        <li><strong>Monitor performance:</strong> Use MongoDB Compass or profiler</li>
+        <li><strong>Plan for growth:</strong> Consider sharding for large datasets</li>
+    </ol>
+    
+    <h2>📈 MongoDB vs SQL Databases</h2>
+    
+    <h3>When to Use MongoDB:</h3>
+    <ul>
+        <li><strong>Flexible schema:</strong> Rapidly evolving data structures</li>
+        <li><strong>Horizontal scaling:</strong> Need to scale across multiple servers</li>
+        <li><strong>Complex nested data:</strong> Documents with embedded objects</li>
+        <li><strong>Rapid development:</strong> Quick prototyping and iteration</li>
+        <li><strong>Big data applications:</strong> Large volumes of unstructured data</li>
+    </ul>
+    
+    <h3>When to Use SQL Databases:</h3>
+    <ul>
+        <li><strong>ACID compliance:</strong> Strong consistency requirements</li>
+        <li><strong>Complex relationships:</strong> Many-to-many relationships</li>
+        <li><strong>Mature ecosystem:</strong> Established tools and expertise</li>
+        <li><strong>Reporting and analytics:</strong> Complex queries and joins</li>
+        <li><strong>Regulatory compliance:</strong> Strict data integrity requirements</li>
+    </ul>
+    
+    <h2>📖 Learning Resources</h2>
+    <ul>
+        <li><a href="https://docs.mongodb.com/" target="_blank">Official MongoDB Documentation</a></li>
+        <li><a href="https://university.mongodb.com/" target="_blank">MongoDB University (Free Courses)</a></li>
+        <li><a href="https://www.mongodb.com/try/download/compass" target="_blank">MongoDB Compass (GUI Tool)</a></li>
+        <li><a href="https://mongoosejs.com/" target="_blank">Mongoose ODM Documentation</a></li>
+        <li><a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp MongoDB Course</a></li>
+        <li><a href="https://www.udemy.com/topic/mongodb/" target="_blank">Udemy MongoDB Courses</a></li>
+    </ul>
+    
+    <h2>💡 Why Learn MongoDB?</h2>
+    <ul>
+        <li><strong>Modern Development:</strong> Perfect for modern web applications</li>
+        <li><strong>Flexibility:</strong> Schema-less design for agile development</li>
+        <li><strong>Scalability:</strong> Built for horizontal scaling</li>
+        <li><strong>Developer Friendly:</strong> JSON-like documents are intuitive</li>
+        <li><strong>High Demand:</strong> Popular in startups and enterprises</li>
+        <li><strong>Cloud Ready:</strong> Available on all major cloud platforms</li>
+        <li><strong>Rich Ecosystem:</strong> Great tools and community support</li>
+        <li><strong>Career Growth:</strong> Valuable skill for modern developers</li>
+    </ul>
+    
+    <h2>🔗 Related Technologies</h2>
+    <ul>
+        <li><a href="mysql.html">← MySQL - Relational Database</a></li>
+        <li><a href="../Back-End/nodejs.html">← Node.js - JavaScript Backend</a></li>
+        <li><a href="../Back-End/python.html">← Python - Backend Development</a></li>
+        <li><a href="../single-page-navigation.html">Single Page Navigation Example →</a></li>
+    </ul>
+    
+    <hr>
+    
+    <footer>
+        <p><strong>Navigation:</strong></p>
+        <ul>
+            <li><a href="../web-dev.html">← Back to Web Development Overview</a></li>
+            <li><a href="mysql.html">← Previous: MySQL</a></li>
+            <li><a href="../single-page-navigation.html">Next: Single Page Navigation →</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

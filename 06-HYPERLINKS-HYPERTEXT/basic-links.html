@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic HTML Links</title>
+</head>
+<body>
+    <h1>Basic HTML Links</h1>
+    
+    <h2>What are Hyperlinks?</h2>
+    <p>Hyperlinks (or simply "links") are connections between web pages or resources. They are created using the anchor tag <strong>&lt;a&gt;</strong> with the <strong>href</strong> attribute.</p>
+    
+    <h2>Basic Link Syntax</h2>
+    <pre>&lt;a href="URL"&gt;Link Text&lt;/a&gt;</pre>
+    
+    <h2>Types of Links</h2>
+    
+    <h3>1. External Links</h3>
+    <p>Links to other websites:</p>
+    <ul>
+        <li><a href="https://www.google.com">Google Search Engine</a></li>
+        <li><a href="https://www.github.com">GitHub - Code Repository</a></li>
+        <li><a href="https://www.stackoverflow.com">Stack Overflow - Developer Community</a></li>
+        <li><a href="https://www.w3schools.com">W3Schools - Web Development Tutorials</a></li>
+        <li><a href="https://developer.mozilla.org">MDN Web Docs - Web Standards</a></li>
+    </ul>
+    
+    <h3>2. Internal Links (Same Website)</h3>
+    <p>Links to other pages within the same website:</p>
+    <ul>
+        <li><a href="web-dev.html">Web Development Overview</a></li>
+        <li><a href="Front-End/html.html">Learn HTML</a></li>
+        <li><a href="Front-End/css.html">Learn CSS</a></li>
+        <li><a href="Front-End/js.html">Learn JavaScript</a></li>
+        <li><a href="Back-End/python.html">Learn Python</a></li>
+        <li><a href="Database/mysql.html">Learn MySQL</a></li>
+    </ul>
+    
+    <h3>3. Anchor Links (Same Page)</h3>
+    <p>Links to sections within the same page:</p>
+    <ul>
+        <li><a href="#email-links">Jump to Email Links Section</a></li>
+        <li><a href="#phone-links">Jump to Phone Links Section</a></li>
+        <li><a href="#download-links">Jump to Download Links Section</a></li>
+        <li><a href="#best-practices">Jump to Best Practices Section</a></li>
+    </ul>
+    
+    <h3 id="email-links">4. Email Links</h3>
+    <p>Links that open the user's email client:</p>
+    <ul>
+        <li><a href="mailto:contact@example.com">Send Email to Contact</a></li>
+        <li><a href="mailto:support@example.com?subject=Help Request">Email Support with Subject</a></li>
+        <li><a href="mailto:info@example.com?subject=Information Request&body=Hello, I would like more information about your services.">Email with Subject and Body</a></li>
+        <li><a href="mailto:team@example.com?cc=manager@example.com&bcc=admin@example.com">Email with CC and BCC</a></li>
+    </ul>
+    
+    <h3 id="phone-links">5. Phone Links</h3>
+    <p>Links that allow users to call phone numbers (especially useful on mobile):</p>
+    <ul>
+        <li><a href="tel:+1234567890">Call: +1 (234) 567-8900</a></li>
+        <li><a href="tel:+1800555123">Toll Free: 1-800-555-0123</a></li>
+        <li><a href="sms:+1234567890">Send SMS to +1 (234) 567-8900</a></li>
+        <li><a href="sms:+1234567890?body=Hello, I'm interested in your services">Send SMS with Message</a></li>
+    </ul>
+    
+    <h3 id="download-links">6. Download Links</h3>
+    <p>Links to downloadable files:</p>
+    <ul>
+        <li><a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" download>Download Sample PDF</a></li>
+        <li><a href="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" download="sample-video.mp4">Download Sample Video</a></li>
+        <li><a href="https://file-examples.com/storage/fe68c8a7c69c7818c7bb8b7/2017/10/file_example_JPG_100kB.jpg" download="sample-image.jpg">Download Sample Image</a></li>
+    </ul>
+    
+    <h2>Link Attributes</h2>
+    
+    <h3>target Attribute</h3>
+    <ul>
+        <li><a href="https://www.google.com" target="_blank">Open Google in New Tab</a> (target="_blank")</li>
+        <li><a href="https://www.github.com" target="_self">Open GitHub in Same Tab</a> (target="_self" - default)</li>
+        <li><a href="https://www.stackoverflow.com" target="_parent">Open Stack Overflow in Parent Frame</a> (target="_parent")</li>
+        <li><a href="https://www.w3schools.com" target="_top">Open W3Schools in Full Window</a> (target="_top")</li>
+    </ul>
+    
+    <h3>title Attribute</h3>
+    <ul>
+        <li><a href="https://www.google.com" title="Visit Google Search Engine">Google</a> (hover to see tooltip)</li>
+        <li><a href="https://www.github.com" title="GitHub - Where developers collaborate">GitHub</a> (hover to see tooltip)</li>
+        <li><a href="Front-End/html.html" title="Learn HTML - The foundation of web development">HTML Tutorial</a> (hover to see tooltip)</li>
+    </ul>
+    
+    <h3>rel Attribute</h3>
+    <ul>
+        <li><a href="https://www.example.com" rel="nofollow">External Link (nofollow)</a></li>
+        <li><a href="https://www.example.com" rel="noopener" target="_blank">Secure External Link</a></li>
+        <li><a href="https://www.example.com" rel="sponsored" target="_blank">Sponsored Link</a></li>
+    </ul>
+    
+    <h2>Relative vs Absolute URLs</h2>
+    
+    <h3>Absolute URLs (Full Path)</h3>
+    <ul>
+        <li><a href="https://www.google.com">https://www.google.com</a></li>
+        <li><a href="https://www.github.com/explore">https://www.github.com/explore</a></li>
+    </ul>
+    
+    <h3>Relative URLs (Relative to Current Page)</h3>
+    <ul>
+        <li><a href="web-dev.html">web-dev.html</a> (same folder)</li>
+        <li><a href="Front-End/html.html">Front-End/html.html</a> (subfolder)</li>
+        <li><a href="../README.md">../README.md</a> (parent folder)</li>
+        <li><a href="./basic-links.html">./basic-links.html</a> (current folder)</li>
+    </ul>
+    
+    <h2>Link States and Styling</h2>
+    <p>Links have different states that can be styled:</p>
+    <ul>
+        <li><strong>:link</strong> - Unvisited link (default blue)</li>
+        <li><strong>:visited</strong> - Visited link (default purple)</li>
+        <li><strong>:hover</strong> - Link when mouse hovers over it</li>
+        <li><strong>:active</strong> - Link when being clicked</li>
+        <li><strong>:focus</strong> - Link when focused (keyboard navigation)</li>
+    </ul>
+    
+    <h2>Images as Links</h2>
+    <p>You can make images clickable by wrapping them in anchor tags:</p>
+    <a href="https://www.google.com" target="_blank">
+        <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="Google Logo" width="136" height="46">
+    </a>
+    <p>Click the Google logo above to visit Google.</p>
+    
+    <h2>Button-style Links</h2>
+    <p>Links can be styled to look like buttons:</p>
+    <a href="web-dev.html">🚀 Start Learning Web Development</a>
+    <a href="Front-End/html.html">📝 Learn HTML</a>
+    <a href="Front-End/css.html">🎨 Learn CSS</a>
+    <a href="Front-End/js.html">⚡ Learn JavaScript</a>
+    
+    <h2>Navigation Menu Example</h2>
+    <nav>
+        <ul>
+            <li><a href="web-dev.html">Home</a></li>
+            <li><a href="Front-End/html.html">Frontend</a>
+                <ul>
+                    <li><a href="Front-End/html.html">HTML</a></li>
+                    <li><a href="Front-End/css.html">CSS</a></li>
+                    <li><a href="Front-End/js.html">JavaScript</a></li>
+                    <li><a href="Front-End/bs.html">Bootstrap</a></li>
+                </ul>
+            </li>
+            <li><a href="Back-End/python.html">Backend</a>
+                <ul>
+                    <li><a href="Back-End/python.html">Python</a></li>
+                    <li><a href="Back-End/java.html">Java</a></li>
+                    <li><a href="Back-End/nodejs.html">Node.js</a></li>
+                </ul>
+            </li>
+            <li><a href="Database/mysql.html">Database</a>
+                <ul>
+                    <li><a href="Database/mysql.html">MySQL</a></li>
+                    <li><a href="Database/mongodb.html">MongoDB</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    
+    <h2 id="best-practices">Best Practices for Links</h2>
+    <ol>
+        <li><strong>Use descriptive link text:</strong> Avoid "click here" or "read more"</li>
+        <li><strong>Make links visually distinct:</strong> Use color, underlines, or other styling</li>
+        <li><strong>Use target="_blank" sparingly:</strong> Only when necessary</li>
+        <li><strong>Add rel="noopener" with target="_blank":</strong> For security</li>
+        <li><strong>Provide context:</strong> Let users know where the link goes</li>
+        <li><strong>Test all links:</strong> Ensure they work and go to the right place</li>
+        <li><strong>Use HTTPS when possible:</strong> For secure connections</li>
+        <li><strong>Consider accessibility:</strong> Links should be keyboard navigable</li>
+    </ol>
+    
+    <h2>Common Link Examples</h2>
+    
+    <h3>Social Media Links</h3>
+    <ul>
+        <li><a href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://www.twitter.com" target="_blank" rel="noopener">Twitter</a></li>
+        <li><a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.youtube.com" target="_blank" rel="noopener">YouTube</a></li>
+    </ul>
+    
+    <h3>Educational Resources</h3>
+    <ul>
+        <li><a href="https://www.freecodecamp.org" target="_blank">freeCodeCamp - Free Coding Bootcamp</a></li>
+        <li><a href="https://www.codecademy.com" target="_blank">Codecademy - Interactive Learning</a></li>
+        <li><a href="https://www.coursera.org" target="_blank">Coursera - Online Courses</a></li>
+        <li><a href="https://www.udemy.com" target="_blank">Udemy - Video Courses</a></li>
+        <li><a href="https://www.khanacademy.org" target="_blank">Khan Academy - Free Education</a></li>
+    </ul>
+    
+    <h3>Developer Tools</h3>
+    <ul>
+        <li><a href="https://code.visualstudio.com" target="_blank">Visual Studio Code - Code Editor</a></li>
+        <li><a href="https://www.figma.com" target="_blank">Figma - Design Tool</a></li>
+        <li><a href="https://www.postman.com" target="_blank">Postman - API Testing</a></li>
+        <li><a href="https://www.netlify.com" target="_blank">Netlify - Web Hosting</a></li>
+        <li><a href="https://vercel.com" target="_blank">Vercel - Deployment Platform</a></li>
+    </ul>
+    
+    <p><a href="#top">Back to Top</a></p>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Images - Basic Usage</title>
+</head>
+<body>
+    <h1>HTML Images - Basic Usage</h1>
+    
+    <h2>Basic Image Syntax</h2>
+    <p>The basic syntax for inserting an image:</p>
+    <pre>&lt;img src="image-path.jpg" alt="Description of image"&gt;</pre>
+    
+    <h2>Sample Images</h2>
+    
+    <h3>Image with Alt Text</h3>
+    <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Beautiful mountain landscape with snow-capped peaks">
+    <p>This image has proper alt text for accessibility.</p>
+    
+    <h3>Image with Width and Height</h3>
+    <img src="https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Colorful hot air balloons in the sky" width="300" height="200">
+    <p>This image has specified width and height attributes.</p>
+    
+    <h3>Responsive Image</h3>
+    <img src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Serene lake with forest reflection" style="max-width: 100%; height: auto;">
+    <p>This image is responsive and will scale with the container.</p>
+    
+    <h2>Image Attributes</h2>
+    
+    <h3>Required Attributes:</h3>
+    <ul>
+        <li><strong>src</strong> - Specifies the path to the image</li>
+        <li><strong>alt</strong> - Provides alternative text for accessibility</li>
+    </ul>
+    
+    <h3>Optional Attributes:</h3>
+    <ul>
+        <li><strong>width</strong> - Specifies the width of the image</li>
+        <li><strong>height</strong> - Specifies the height of the image</li>
+        <li><strong>title</strong> - Provides additional information (tooltip)</li>
+        <li><strong>loading</strong> - Controls when the image loads (lazy, eager)</li>
+    </ul>
+    
+    <h2>Image with Title Attribute</h2>
+    <img src="https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Golden sunset over ocean waves" title="Hover over this image to see the title" width="400">
+    <p>Hover over the image above to see the title attribute in action.</p>
+    
+    <h2>Lazy Loading</h2>
+    <img src="https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Dense green forest from above" loading="lazy" width="400">
+    <p>This image uses lazy loading - it only loads when it's about to come into view.</p>
+    
+    <h2>Image Sizing Best Practices</h2>
+    
+    <h3>Fixed Size:</h3>
+    <img src="https://images.pexels.com/photos/1591373/pexels-photo-1591373.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Cute kitten playing with yarn" width="200" height="150">
+    
+    <h3>Proportional Sizing:</h3>
+    <img src="https://images.pexels.com/photos/1591373/pexels-photo-1591373.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Cute kitten playing with yarn" width="200">
+    <p>When you specify only width or height, the browser maintains aspect ratio.</p>
+    
+    <h2>Alt Text Guidelines</h2>
+    
+    <h3>Good Alt Text Examples:</h3>
+    <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Red sports car parked in front of modern building" width="300">
+    <p>Alt text: "Red sports car parked in front of modern building"</p>
+    
+    <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=300" alt="" width="300">
+    <p>Decorative image with empty alt text (alt="")</p>
+    
+    <h3>Alt Text Best Practices:</h3>
+    <ul>
+        <li>Be descriptive but concise</li>
+        <li>Don't start with "Image of..." or "Picture of..."</li>
+        <li>Include important text that appears in the image</li>
+        <li>Use empty alt="" for decorative images</li>
+        <li>Consider the context and purpose of the image</li>
+    </ul>
+    
+    <h2>Common Image Paths</h2>
+    
+    <h3>Relative Paths:</h3>
+    <pre>
+&lt;img src="images/photo.jpg" alt="Description"&gt;
+&lt;img src="../images/photo.jpg" alt="Description"&gt;
+&lt;img src="./photo.jpg" alt="Description"&gt;
+    </pre>
+    
+    <h3>Absolute Paths:</h3>
+    <pre>
+&lt;img src="/images/photo.jpg" alt="Description"&gt;
+&lt;img src="https://example.com/photo.jpg" alt="Description"&gt;
+    </pre>
+    
+    <h2>Image as Link</h2>
+    <a href="https://www.pexels.com">
+        <img src="https://images.pexels.com/photos/1366957/pexels-photo-1366957.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Click to visit Pexels website" width="200">
+    </a>
+    <p>This image is wrapped in a link and can be clicked.</p>
+</body>
+</html>

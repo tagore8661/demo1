@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Python - Backend Technology</title>
+</head>
+<body>
+    <nav>
+        <p><a href="../web-dev.html">← Back to Web Development Overview</a> | 
+           <a href="../Front-End/bs.html">← Previous: Bootstrap</a> | 
+           <a href="java.html">Next: Java →</a></p>
+    </nav>
+    
+    <h1>🐍 Python</h1>
+    
+    <div>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python Logo" width="100" height="100">
+    </div>
+    
+    <h2>What is Python?</h2>
+    <p>Python is a high-level, interpreted programming language known for its simplicity and readability. Created by Guido van Rossum in 1991, Python emphasizes code readability and allows programmers to express concepts in fewer lines of code than languages like C++ or Java.</p>
+    
+    <h2>🎯 Key Features of Python</h2>
+    <ul>
+        <li><strong>Easy to Learn:</strong> Simple, readable syntax similar to English</li>
+        <li><strong>Interpreted Language:</strong> No compilation step required</li>
+        <li><strong>Cross-Platform:</strong> Runs on Windows, macOS, Linux, and more</li>
+        <li><strong>Dynamically Typed:</strong> No need to declare variable types</li>
+        <li><strong>Extensive Libraries:</strong> Huge standard library and third-party packages</li>
+        <li><strong>Object-Oriented:</strong> Supports OOP principles</li>
+        <li><strong>Open Source:</strong> Free to use and modify</li>
+    </ul>
+    
+    <h2>🏗️ Python Basics</h2>
+    
+    <h3>Variables and Data Types:</h3>
+    <pre>
+# Variables (no declaration needed)
+name = "Alice"
+age = 25
+height = 5.6
+is_student = True
+
+# Data Types
+number = 42              # int
+decimal = 3.14           # float
+text = "Hello World"     # str
+flag = True              # bool
+items = [1, 2, 3]        # list
+person = {"name": "Bob", "age": 30}  # dict
+coordinates = (10, 20)   # tuple
+unique_items = {1, 2, 3} # set
+    </pre>
+    
+    <h3>Control Structures:</h3>
+    <pre>
+# If statements
+if age >= 18:
+    print("Adult")
+elif age >= 13:
+    print("Teenager")
+else:
+    print("Child")
+
+# Loops
+for i in range(5):
+    print(i)
+
+for item in items:
+    print(item)
+
+while age < 30:
+    age += 1
+    print(f"Age is now {age}")
+    </pre>
+    
+    <h3>Functions:</h3>
+    <pre>
+# Function definition
+def greet(name, greeting="Hello"):
+    return f"{greeting}, {name}!"
+
+# Function call
+message = greet("World")
+print(message)
+
+# Lambda functions
+square = lambda x: x ** 2
+print(square(5))  # Output: 25
+    </pre>
+    
+    <h2>🌐 Python for Web Development</h2>
+    
+    <h3>Popular Web Frameworks:</h3>
+    <ul>
+        <li><strong>Django:</strong> Full-featured web framework</li>
+        <li><strong>Flask:</strong> Lightweight and flexible framework</li>
+        <li><strong>FastAPI:</strong> Modern, fast API framework</li>
+        <li><strong>Pyramid:</strong> Flexible web framework</li>
+        <li><strong>Tornado:</strong> Scalable web framework</li>
+    </ul>
+    
+    <h3>Django Framework:</h3>
+    <ul>
+        <li><strong>MTV Architecture:</strong> Model-Template-View pattern</li>
+        <li><strong>ORM:</strong> Object-Relational Mapping</li>
+        <li><strong>Admin Interface:</strong> Built-in admin panel</li>
+        <li><strong>Security Features:</strong> Built-in security measures</li>
+        <li><strong>Scalability:</strong> Handles high-traffic websites</li>
+    </ul>
+    
+    <h3>Flask Framework:</h3>
+    <ul>
+        <li><strong>Minimalist:</strong> Simple and lightweight</li>
+        <li><strong>Flexible:</strong> Easy to customize and extend</li>
+        <li><strong>Jinja2 Templates:</strong> Powerful templating engine</li>
+        <li><strong>Werkzeug:</strong> WSGI utility library</li>
+        <li><strong>Extensions:</strong> Large ecosystem of extensions</li>
+    </ul>
+    
+    <h2>📊 Python Libraries and Packages</h2>
+    
+    <h3>Web Development:</h3>
+    <ul>
+        <li><strong>requests:</strong> HTTP library for API calls</li>
+        <li><strong>BeautifulSoup:</strong> Web scraping library</li>
+        <li><strong>Selenium:</strong> Web browser automation</li>
+        <li><strong>Scrapy:</strong> Web crawling framework</li>
+    </ul>
+    
+    <h3>Data Science and Analytics:</h3>
+    <ul>
+        <li><strong>NumPy:</strong> Numerical computing</li>
+        <li><strong>Pandas:</strong> Data manipulation and analysis</li>
+        <li><strong>Matplotlib:</strong> Data visualization</li>
+        <li><strong>Scikit-learn:</strong> Machine learning library</li>
+        <li><strong>TensorFlow:</strong> Deep learning framework</li>
+        <li><strong>PyTorch:</strong> Machine learning framework</li>
+    </ul>
+    
+    <h3>Database Integration:</h3>
+    <ul>
+        <li><strong>SQLAlchemy:</strong> SQL toolkit and ORM</li>
+        <li><strong>psycopg2:</strong> PostgreSQL adapter</li>
+        <li><strong>PyMySQL:</strong> MySQL client library</li>
+        <li><strong>pymongo:</strong> MongoDB driver</li>
+    </ul>
+    
+    <h2>🛠️ Python Development Tools</h2>
+    
+    <h3>IDEs and Editors:</h3>
+    <ul>
+        <li><strong>PyCharm:</strong> Professional Python IDE</li>
+        <li><strong>Visual Studio Code:</strong> Lightweight editor with Python extension</li>
+        <li><strong>Jupyter Notebook:</strong> Interactive development environment</li>
+        <li><strong>Sublime Text:</strong> Fast text editor</li>
+        <li><strong>Vim/Emacs:</strong> Terminal-based editors</li>
+    </ul>
+    
+    <h3>Package Management:</h3>
+    <ul>
+        <li><strong>pip:</strong> Package installer for Python</li>
+        <li><strong>conda:</strong> Package and environment manager</li>
+        <li><strong>pipenv:</strong> Python dependency management</li>
+        <li><strong>poetry:</strong> Modern dependency management</li>
+    </ul>
+    
+    <h3>Virtual Environments:</h3>
+    <pre>
+# Create virtual environment
+python -m venv myenv
+
+# Activate virtual environment
+# Windows
+myenv\Scripts\activate
+# macOS/Linux
+source myenv/bin/activate
+
+# Install packages
+pip install django flask requests
+
+# Deactivate
+deactivate
+    </pre>
+    
+    <h2>🗄️ Python and Databases</h2>
+    
+    <h3>SQL Databases:</h3>
+    <pre>
+import sqlite3
+
+# Connect to database
+conn = sqlite3.connect('example.db')
+cursor = conn.cursor()
+
+# Create table
+cursor.execute('''CREATE TABLE users 
+                  (id INTEGER PRIMARY KEY, name TEXT, email TEXT)''')
+
+# Insert data
+cursor.execute("INSERT INTO users (name, email) VALUES (?, ?)", 
+               ("Alice", "alice@email.com"))
+
+# Query data
+cursor.execute("SELECT * FROM users")
+results = cursor.fetchall()
+
+conn.commit()
+conn.close()
+    </pre>
+    
+    <h3>NoSQL Databases (MongoDB):</h3>
+    <pre>
+from pymongo import MongoClient
+
+# Connect to MongoDB
+client = MongoClient('mongodb://localhost:27017/')
+db = client['mydatabase']
+collection = db['users']
+
+# Insert document
+user = {"name": "Bob", "email": "bob@email.com", "age": 30}
+collection.insert_one(user)
+
+# Find documents
+users = collection.find({"age": {"$gte": 18}})
+for user in users:
+    print(user)
+    </pre>
+    
+    <h2>🚀 Python Web Development Example</h2>
+    
+    <h3>Simple Flask Application:</h3>
+    <pre>
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/contact', methods=['GET', 'POST'])
+def contact():
+    if request.method == 'POST':
+        name = request.form['name']
+        email = request.form['email']
+        # Process form data
+        return f"Thank you, {name}!"
+    return render_template('contact.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+    </pre>
+    
+    <h3>Django Model Example:</h3>
+    <pre>
+from django.db import models
+
+class User(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return self.name
+
+class Post(models.Model):
+    title = models.CharField(max_length=200)
+    content = models.TextField()
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    published_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return self.title
+    </pre>
+    
+    <h2>🔧 Python Best Practices</h2>
+    <ol>
+        <li><strong>Follow PEP 8:</strong> Python's style guide for code formatting</li>
+        <li><strong>Use virtual environments:</strong> Isolate project dependencies</li>
+        <li><strong>Write docstrings:</strong> Document your functions and classes</li>
+        <li><strong>Handle exceptions:</strong> Use try-except blocks appropriately</li>
+        <li><strong>Use list comprehensions:</strong> Write more Pythonic code</li>
+        <li><strong>Import modules properly:</strong> Follow import conventions</li>
+        <li><strong>Use meaningful names:</strong> Clear variable and function names</li>
+        <li><strong>Test your code:</strong> Write unit tests with pytest or unittest</li>
+    </ol>
+    
+    <h2>🧪 Testing in Python</h2>
+    
+    <h3>Unit Testing with pytest:</h3>
+    <pre>
+# test_calculator.py
+def add(a, b):
+    return a + b
+
+def test_add():
+    assert add(2, 3) == 5
+    assert add(-1, 1) == 0
+    assert add(0, 0) == 0
+
+# Run tests: pytest test_calculator.py
+    </pre>
+    
+    <h3>Testing Web Applications:</h3>
+    <pre>
+# Flask testing example
+import pytest
+from myapp import app
+
+@pytest.fixture
+def client():
+    app.config['TESTING'] = True
+    with app.test_client() as client:
+        yield client
+
+def test_home_page(client):
+    response = client.get('/')
+    assert response.status_code == 200
+    assert b'Welcome' in response.data
+    </pre>
+    
+    <h2>📈 Python Career Paths</h2>
+    
+    <h3>Web Development:</h3>
+    <ul>
+        <li>Backend Developer</li>
+        <li>Full-Stack Developer</li>
+        <li>API Developer</li>
+        <li>DevOps Engineer</li>
+    </ul>
+    
+    <h3>Data Science:</h3>
+    <ul>
+        <li>Data Scientist</li>
+        <li>Data Analyst</li>
+        <li>Machine Learning Engineer</li>
+        <li>Research Scientist</li>
+    </ul>
+    
+    <h3>Other Fields:</h3>
+    <ul>
+        <li>Automation Engineer</li>
+        <li>Software Developer</li>
+        <li>System Administrator</li>
+        <li>Quality Assurance Engineer</li>
+    </ul>
+    
+    <h2>📖 Learning Resources</h2>
+    <ul>
+        <li><a href="https://docs.python.org/3/" target="_blank">Official Python Documentation</a></li>
+        <li><a href="https://www.python.org/dev/peps/pep-0008/" target="_blank">PEP 8 Style Guide</a></li>
+        <li><a href="https://realpython.com/" target="_blank">Real Python Tutorials</a></li>
+        <li><a href="https://www.djangoproject.com/" target="_blank">Django Documentation</a></li>
+        <li><a href="https://flask.palletsprojects.com/" target="_blank">Flask Documentation</a></li>
+        <li><a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp Python Course</a></li>
+        <li><a href="https://www.codecademy.com/learn/learn-python-3" target="_blank">Codecademy Python Course</a></li>
+    </ul>
+    
+    <h2>💡 Why Learn Python?</h2>
+    <ul>
+        <li><strong>Beginner Friendly:</strong> Easy syntax and readable code</li>
+        <li><strong>Versatile:</strong> Web development, data science, automation, AI</li>
+        <li><strong>High Demand:</strong> Popular in many industries</li>
+        <li><strong>Large Community:</strong> Extensive resources and support</li>
+        <li><strong>Rapid Development:</strong> Quick prototyping and development</li>
+        <li><strong>Career Growth:</strong> Excellent job opportunities and salaries</li>
+        <li><strong>Future-Proof:</strong> Growing popularity in emerging technologies</li>
+    </ul>
+    
+    <h2>🔗 Related Technologies</h2>
+    <ul>
+        <li><a href="java.html">Java - Enterprise Backend Development →</a></li>
+        <li><a href="nodejs.html">Node.js - JavaScript Backend →</a></li>
+        <li><a href="../Database/mysql.html">MySQL - Relational Database →</a></li>
+        <li><a href="../Database/mongodb.html">MongoDB - NoSQL Database →</a></li>
+    </ul>
+    
+    <hr>
+    
+    <footer>
+        <p><strong>Navigation:</strong></p>
+        <ul>
+            <li><a href="../web-dev.html">← Back to Web Development Overview</a></li>
+            <li><a href="../Front-End/bs.html">← Previous: Bootstrap</a></li>
+            <li><a href="java.html">Next: Learn Java →</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

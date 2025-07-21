@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Formats and Types</title>
+</head>
+<body>
+    <h1>Image Formats and Types</h1>
+    
+    <h2>Common Image Formats</h2>
+    
+    <h3>1. JPEG (.jpg, .jpeg)</h3>
+    <img src="https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=300" alt="JPEG example - sunset landscape" width="300">
+    <ul>
+        <li><strong>Best for:</strong> Photographs, complex images with many colors</li>
+        <li><strong>Pros:</strong> Small file size, good compression, widely supported</li>
+        <li><strong>Cons:</strong> Lossy compression, no transparency support</li>
+        <li><strong>Use when:</strong> You need small file sizes for photos</li>
+    </ul>
+    
+    <h3>2. PNG (.png)</h3>
+    <img src="https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg?auto=compress&cs=tinysrgb&w=300" alt="PNG example - would support transparency" width="300">
+    <ul>
+        <li><strong>Best for:</strong> Images with transparency, logos, simple graphics</li>
+        <li><strong>Pros:</strong> Lossless compression, transparency support, high quality</li>
+        <li><strong>Cons:</strong> Larger file sizes than JPEG</li>
+        <li><strong>Use when:</strong> You need transparency or high quality graphics</li>
+    </ul>
+    
+    <h3>3. GIF (.gif)</h3>
+    <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=300" alt="GIF example - could be animated" width="300">
+    <ul>
+        <li><strong>Best for:</strong> Simple animations, images with few colors</li>
+        <li><strong>Pros:</strong> Animation support, small file size for simple images</li>
+        <li><strong>Cons:</strong> Limited to 256 colors, not good for photos</li>
+        <li><strong>Use when:</strong> You need simple animations or very simple graphics</li>
+    </ul>
+    
+    <h3>4. WebP (.webp)</h3>
+    <img src="https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&w=300" alt="WebP example - modern format" width="300">
+    <ul>
+        <li><strong>Best for:</strong> Modern web applications, any type of image</li>
+        <li><strong>Pros:</strong> Excellent compression, supports transparency and animation</li>
+        <li><strong>Cons:</strong> Not supported in older browsers</li>
+        <li><strong>Use when:</strong> You want the best compression for modern browsers</li>
+    </ul>
+    
+    <h3>5. SVG (.svg)</h3>
+    <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+        <rect width="300" height="200" fill="#4CAF50"/>
+        <circle cx="150" cy="100" r="50" fill="#FFC107"/>
+        <text x="150" y="110" text-anchor="middle" fill="white" font-size="16">SVG Example</text>
+    </svg>
+    <ul>
+        <li><strong>Best for:</strong> Vector graphics, logos, icons, simple illustrations</li>
+        <li><strong>Pros:</strong> Scalable, small file size, can be styled with CSS</li>
+        <li><strong>Cons:</strong> Not suitable for complex photos</li>
+        <li><strong>Use when:</strong> You need scalable graphics that look crisp at any size</li>
+    </ul>
+    
+    <h2>Format Comparison Table</h2>
+    <table border="1">
+        <tr>
+            <th>Format</th>
+            <th>Transparency</th>
+            <th>Animation</th>
+            <th>Compression</th>
+            <th>Best Use Case</th>
+        </tr>
+        <tr>
+            <td>JPEG</td>
+            <td>No</td>
+            <td>No</td>
+            <td>Lossy (small files)</td>
+            <td>Photographs</td>
+        </tr>
+        <tr>
+            <td>PNG</td>
+            <td>Yes</td>
+            <td>No</td>
+            <td>Lossless (larger files)</td>
+            <td>Graphics with transparency</td>
+        </tr>
+        <tr>
+            <td>GIF</td>
+            <td>Yes (basic)</td>
+            <td>Yes</td>
+            <td>Lossless (256 colors max)</td>
+            <td>Simple animations</td>
+        </tr>
+        <tr>
+            <td>WebP</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Lossy/Lossless (very efficient)</td>
+            <td>Modern web applications</td>
+        </tr>
+        <tr>
+            <td>SVG</td>
+            <td>Yes</td>
+            <td>Yes (with CSS/JS)</td>
+            <td>Vector (scalable)</td>
+            <td>Icons, logos, simple graphics</td>
+        </tr>
+    </table>
+    
+    <h2>Choosing the Right Format</h2>
+    
+    <h3>For Photographs:</h3>
+    <ol>
+        <li><strong>JPEG</strong> - First choice for photos</li>
+        <li><strong>WebP</strong> - If you support modern browsers</li>
+        <li><strong>PNG</strong> - If you need transparency in a photo</li>
+    </ol>
+    
+    <h3>For Graphics and Logos:</h3>
+    <ol>
+        <li><strong>SVG</strong> - First choice for simple vector graphics</li>
+        <li><strong>PNG</strong> - For complex graphics with transparency</li>
+        <li><strong>WebP</strong> - For modern browsers with best compression</li>
+    </ol>
+    
+    <h3>For Animations:</h3>
+    <ol>
+        <li><strong>GIF</strong> - Simple animations, wide browser support</li>
+        <li><strong>WebP</strong> - Better quality animations for modern browsers</li>
+        <li><strong>SVG + CSS</strong> - Vector animations</li>
+    </ol>
+    
+    <h2>File Size Considerations</h2>
+    <p>Typical file sizes for a 400x300 image:</p>
+    <ul>
+        <li><strong>JPEG (high quality):</strong> 50-150 KB</li>
+        <li><strong>PNG:</strong> 100-500 KB</li>
+        <li><strong>GIF:</strong> 50-200 KB (depends on colors)</li>
+        <li><strong>WebP:</strong> 30-100 KB (best compression)</li>
+        <li><strong>SVG:</strong> 1-50 KB (for simple graphics)</li>
+    </ul>
+    
+    <h2>Browser Support</h2>
+    <ul>
+        <li><strong>JPEG, PNG, GIF:</strong> Universal support</li>
+        <li><strong>WebP:</strong> Modern browsers (Chrome, Firefox, Safari, Edge)</li>
+        <li><strong>SVG:</strong> All modern browsers</li>
+    </ul>
+    
+    <h2>Best Practices</h2>
+    <ol>
+        <li><strong>Optimize images</strong> before using them on the web</li>
+        <li><strong>Use appropriate formats</strong> for different types of content</li>
+        <li><strong>Consider file size</strong> vs quality trade-offs</li>
+        <li><strong>Provide fallbacks</strong> for newer formats</li>
+        <li><strong>Use responsive images</strong> for different screen sizes</li>
+    </ol>
+</body>
+</html>

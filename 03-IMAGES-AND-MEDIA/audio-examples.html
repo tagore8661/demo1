@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Audio Examples</title>
+</head>
+<body>
+    <h1>HTML Audio Examples</h1>
+    
+    <h2>Basic Audio Element</h2>
+    <p>The HTML5 audio element allows you to embed audio content in web pages.</p>
+    
+    <h3>Basic Audio with Controls</h3>
+    <audio controls>
+        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/wav">
+        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <p>This audio player has basic controls (play, pause, volume, progress).</p>
+    
+    <h2>Audio Attributes</h2>
+    
+    <h3>Autoplay Audio (Use Carefully!)</h3>
+    <audio controls autoplay muted>
+        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/wav">
+        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <p><strong>Note:</strong> Autoplay is muted due to browser policies. Most browsers block unmuted autoplay.</p>
+    
+    <h3>Looping Audio</h3>
+    <audio controls loop>
+        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/wav">
+        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <p>This audio will loop continuously when played.</p>
+    
+    <h3>Preloaded Audio</h3>
+    <audio controls preload="auto">
+        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/wav">
+        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <p>This audio is preloaded when the page loads.</p>
+    
+    <h2>Audio Attributes Explained</h2>
+    <table border="1">
+        <tr>
+            <th>Attribute</th>
+            <th>Description</th>
+            <th>Values</th>
+        </tr>
+        <tr>
+            <td>controls</td>
+            <td>Shows audio controls</td>
+            <td>controls (boolean)</td>
+        </tr>
+        <tr>
+            <td>autoplay</td>
+            <td>Starts playing automatically</td>
+            <td>autoplay (boolean)</td>
+        </tr>
+        <tr>
+            <td>loop</td>
+            <td>Repeats the audio</td>
+            <td>loop (boolean)</td>
+        </tr>
+        <tr>
+            <td>muted</td>
+            <td>Starts muted</td>
+            <td>muted (boolean)</td>
+        </tr>
+        <tr>
+            <td>preload</td>
+            <td>How much to preload</td>
+            <td>none, metadata, auto</td>
+        </tr>
+        <tr>
+            <td>src</td>
+            <td>Audio file URL</td>
+            <td>URL</td>
+        </tr>
+    </table>
+    
+    <h2>Audio Formats and Browser Support</h2>
+    
+    <h3>Common Audio Formats:</h3>
+    <table border="1">
+        <tr>
+            <th>Format</th>
+            <th>MIME Type</th>
+            <th>Browser Support</th>
+            <th>Quality</th>
+            <th>File Size</th>
+        </tr>
+        <tr>
+            <td>MP3</td>
+            <td>audio/mpeg</td>
+            <td>Excellent</td>
+            <td>Good</td>
+            <td>Small</td>
+        </tr>
+        <tr>
+            <td>WAV</td>
+            <td>audio/wav</td>
+            <td>Good</td>
+            <td>Excellent</td>
+            <td>Large</td>
+        </tr>
+        <tr>
+            <td>OGG</td>
+            <td>audio/ogg</td>
+            <td>Firefox, Chrome</td>
+            <td>Good</td>
+            <td>Small</td>
+        </tr>
+        <tr>
+            <td>AAC</td>
+            <td>audio/aac</td>
+            <td>Safari, Chrome</td>
+            <td>Good</td>
+            <td>Small</td>
+        </tr>
+        <tr>
+            <td>FLAC</td>
+            <td>audio/flac</td>
+            <td>Modern browsers</td>
+            <td>Excellent</td>
+            <td>Large</td>
+        </tr>
+    </table>
+    
+    <h2>Multiple Source Example</h2>
+    <audio controls>
+        <source src="audio/song.ogg" type="audio/ogg">
+        <source src="audio/song.mp3" type="audio/mpeg">
+        <source src="audio/song.wav" type="audio/wav">
+        <p>Your browser doesn't support HTML5 audio. <a href="audio/song.mp3">Download the audio file</a>.</p>
+    </audio>
+    <p>The browser will use the first supported format from the list.</p>
+    
+    <h2>Audio Without Controls</h2>
+    <audio id="hiddenAudio">
+        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/wav">
+        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3" type="audio/mpeg">
+    </audio>
+    <button onclick="document.getElementById('hiddenAudio').play()">Play Audio</button>
+    <button onclick="document.getElementById('hiddenAudio').pause()">Pause Audio</button>
+    <button onclick="document.getElementById('hiddenAudio').currentTime = 0">Reset Audio</button>
+    <p>Custom controls using JavaScript to control audio without showing default controls.</p>
+    
+    <h2>Preload Options</h2>
+    
+    <h3>preload="none"</h3>
+    <audio controls preload="none">
+        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/wav">
+        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3" type="audio/mpeg">
+    </audio>
+    <p>No preloading - saves bandwidth but may have delay when playing.</p>
+    
+    <h3>preload="metadata"</h3>
+    <audio controls preload="metadata">
+        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/wav">
+        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3" type="audio/mpeg">
+    </audio>
+    <p>Preloads only metadata (duration, dimensions) - good balance.</p>
+    
+    <h3>preload="auto"</h3>
+    <audio controls preload="auto">
+        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/wav">
+        <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3" type="audio/mpeg">
+    </audio>
+    <p>Preloads the entire audio file - fastest playback but uses more bandwidth.</p>
+    
+    <h2>Accessibility Considerations</h2>
+    <ul>
+        <li><strong>Provide transcripts</strong> for important audio content</li>
+        <li><strong>Use captions</strong> when possible</li>
+        <li><strong>Don't autoplay</strong> audio as it can be disruptive</li>
+        <li><strong>Provide alternative formats</strong> for better compatibility</li>
+        <li><strong>Include fallback content</strong> for unsupported browsers</li>
+    </ul>
+    
+    <h2>Best Practices</h2>
+    <ol>
+        <li><strong>Always include multiple formats</strong> for browser compatibility</li>
+        <li><strong>Use MP3 as your primary format</strong> for widest support</li>
+        <li><strong>Optimize audio files</strong> for web delivery</li>
+        <li><strong>Consider file size</strong> vs quality trade-offs</li>
+        <li><strong>Test across different browsers</strong> and devices</li>
+        <li><strong>Provide fallback content</strong> for accessibility</li>
+        <li><strong>Be mindful of autoplay policies</strong> in modern browsers</li>
+    </ol>
+    
+    <h2>Common Use Cases</h2>
+    <ul>
+        <li><strong>Background music</strong> for websites (use sparingly)</li>
+        <li><strong>Podcast episodes</strong> and audio content</li>
+        <li><strong>Sound effects</strong> for interactive elements</li>
+        <li><strong>Audio feedback</strong> for user actions</li>
+        <li><strong>Voice recordings</strong> and interviews</li>
+        <li><strong>Music samples</strong> and previews</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Formatting Elements</title>
+</head>
+<body>
+    <h1>HTML Text Formatting Elements</h1>
+    
+    <h2>Bold and Strong</h2>
+    <p>This text is <b>bold using b element</b> (presentational)</p>
+    <p>This text is <strong>strong using strong element</strong> (semantic - important)</p>
+    
+    <!-- 
+    DIFFERENCE BETWEEN BOLD AND STRONG:
+    - <b> is presentational - just makes text look bold
+    - <strong> is semantic - indicates importance/emphasis
+    - Screen readers will emphasize <strong> text differently
+    - Search engines give more weight to <strong> content
+    - Use <strong> for important content, <b> for stylistic bold text
+    -->
+    
+    <h2>Italic and Emphasis</h2>
+    <p>This text is <i>italic using i element</i> (presentational)</p>
+    <p>This text is <em>emphasized using em element</em> (semantic - emphasis)</p>
+    
+    <!-- 
+    DIFFERENCE BETWEEN ITALIC AND EM:
+    - <i> is presentational - just makes text look italic
+    - <em> is semantic - indicates stress emphasis
+    - Screen readers will emphasize <em> text with vocal stress
+    - <em> has semantic meaning for accessibility and SEO
+    - Use <em> for emphasized content, <i> for stylistic italic text
+    -->
+    
+    <h2>Other Formatting Elements</h2>
+    
+    <p>This text is <mark>highlighted using mark element</mark></p>
+    
+    <p>This text is <u>underlined using u element</u></p>
+    
+    <p>This text is <small>smaller using small element</small></p>
+    
+    <p>This text is <del>deleted/strikethrough using del element</del></p>
+    
+    <p>This text contains <sub>subscript</sub> and <sup>superscript</sup></p>
+    
+    <h2>Blockquotes</h2>
+    <p>Here's a regular paragraph before the quote.</p>
+    
+    <blockquote>
+        This is a blockquote. It's used for longer quotations that are set apart from the main text. Blockquotes are typically indented and may have different styling.
+    </blockquote>
+    
+    <p>And here's a paragraph after the quote.</p>
+    
+    <blockquote cite="https://www.example.com">
+        This blockquote has a cite attribute that indicates the source of the quotation.
+    </blockquote>
+    
+    <h2>Combining Formatting Elements</h2>
+    <p>You can combine elements: <strong><em>This text is both strong and emphasized</em></strong></p>
+    
+    <p>Mathematical expressions: E = mc<sup>2</sup></p>
+    
+    <p>Chemical formulas: H<sub>2</sub>O</p>
+    
+    <p>This is <mark><strong>highlighted and important</strong></mark> text.</p>
+    
+    <h2>Semantic vs Presentational</h2>
+    <p><strong>Semantic elements</strong> (strong, em, mark, del) convey meaning</p>
+    <p><strong>Presentational elements</strong> (b, i, u) only affect appearance</p>
+    <p>Always prefer semantic elements when the meaning matches your intent!</p>
+</body>
+</html>

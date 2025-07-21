@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Description Lists</title>
+</head>
+<body>
+    <h1>HTML Description Lists (dl)</h1>
+    
+    <h2>What are Description Lists?</h2>
+    <p>Description lists are used to display terms and their definitions or descriptions. They consist of:</p>
+    <ul>
+        <li><strong>&lt;dl&gt;</strong> - Description list container</li>
+        <li><strong>&lt;dt&gt;</strong> - Description term</li>
+        <li><strong>&lt;dd&gt;</strong> - Description definition</li>
+    </ul>
+    
+    <h2>Basic Description List</h2>
+    <dl>
+        <dt>HTML</dt>
+        <dd>HyperText Markup Language - the standard markup language for creating web pages</dd>
+        
+        <dt>CSS</dt>
+        <dd>Cascading Style Sheets - used for describing the presentation of a document written in HTML</dd>
+        
+        <dt>JavaScript</dt>
+        <dd>A programming language that enables interactive web pages and dynamic content</dd>
+    </dl>
+    
+    <h2>Glossary Example</h2>
+    <h3>Web Development Terms</h3>
+    <dl>
+        <dt>API</dt>
+        <dd>Application Programming Interface - a set of protocols and tools for building software applications</dd>
+        
+        <dt>Framework</dt>
+        <dd>A platform for developing software applications that provides a foundation of pre-written code</dd>
+        
+        <dt>Library</dt>
+        <dd>A collection of pre-written code that developers can use to optimize tasks</dd>
+        
+        <dt>Repository</dt>
+        <dd>A storage location for software packages, often used with version control systems like Git</dd>
+        
+        <dt>Responsive Design</dt>
+        <dd>An approach to web design that makes web pages render well on various devices and screen sizes</dd>
+    </dl>
+    
+    <h2>Multiple Definitions for One Term</h2>
+    <dl>
+        <dt>Bank</dt>
+        <dd>A financial institution that accepts deposits and channels them into lending activities</dd>
+        <dd>The land alongside or sloping down to a river or lake</dd>
+        <dd>A supply or stock held in reserve for future use</dd>
+        
+        <dt>Mouse</dt>
+        <dd>A small rodent with a pointed snout and long tail</dd>
+        <dd>A computer input device used to control a cursor on screen</dd>
+    </dl>
+    
+    <h2>Multiple Terms for One Definition</h2>
+    <dl>
+        <dt>WWW</dt>
+        <dt>World Wide Web</dt>
+        <dt>Web</dt>
+        <dd>An information system on the Internet that allows documents to be connected to other documents by hypertext links</dd>
+        
+        <dt>URL</dt>
+        <dt>Uniform Resource Locator</dt>
+        <dt>Web Address</dt>
+        <dd>A reference to a web resource that specifies its location on a computer network</dd>
+    </dl>
+    
+    <h2>Technical Specifications</h2>
+    <h3>HTML5 Features</h3>
+    <dl>
+        <dt>Semantic Elements</dt>
+        <dd>Elements like &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;article&gt;, &lt;section&gt;, &lt;aside&gt;, and &lt;footer&gt; that provide meaning to the structure</dd>
+        
+        <dt>Canvas Element</dt>
+        <dd>Provides a drawable region defined in HTML code with height and width attributes for graphics and animations</dd>
+        
+        <dt>Video and Audio Elements</dt>
+        <dd>Native support for multimedia content without requiring plugins</dd>
+        
+        <dt>Local Storage</dt>
+        <dd>Allows web applications to store data locally within the user's browser</dd>
+        
+        <dt>Geolocation API</dt>
+        <dd>Allows web applications to access the user's geographical location</dd>
+    </dl>
+    
+    <h2>FAQ Format</h2>
+    <h3>Frequently Asked Questions</h3>
+    <dl>
+        <dt>What is the difference between HTML and XHTML?</dt>
+        <dd>XHTML is a stricter, more XML-based version of HTML that requires proper nesting, closing tags, and lowercase element names</dd>
+        
+        <dt>Do I need to learn HTML before CSS?</dt>
+        <dd>Yes, HTML provides the structure that CSS styles, so understanding HTML is essential before learning CSS</dd>
+        
+        <dt>Is HTML a programming language?</dt>
+        <dd>No, HTML is a markup language used to structure content, not a programming language that performs computations</dd>
+        
+        <dt>What's the latest version of HTML?</dt>
+        <dd>HTML5 is the current standard, with ongoing development as a "living standard" by the WHATWG</dd>
+    </dl>
+    
+    <h2>Product Specifications</h2>
+    <h3>Laptop Specifications</h3>
+    <dl>
+        <dt>Processor</dt>
+        <dd>Intel Core i7-12700H (12th Gen)</dd>
+        
+        <dt>Memory</dt>
+        <dd>16GB DDR4 RAM</dd>
+        
+        <dt>Storage</dt>
+        <dd>512GB NVMe SSD</dd>
+        
+        <dt>Display</dt>
+        <dd>15.6" Full HD (1920x1080) IPS Display</dd>
+        
+        <dt>Graphics</dt>
+        <dd>NVIDIA GeForce RTX 3060 6GB</dd>
+        
+        <dt>Operating System</dt>
+        <dd>Windows 11 Home</dd>
+        
+        <dt>Battery Life</dt>
+        <dd>Up to 8 hours typical usage</dd>
+        
+        <dt>Weight</dt>
+        <dd>2.3 kg (5.07 lbs)</dd>
+    </dl>
+    
+    <h2>Contact Information</h2>
+    <h3>Company Directory</h3>
+    <dl>
+        <dt>Sales Department</dt>
+        <dd>Phone: (555) 123-4567</dd>
+        <dd>Email: sales@company.com</dd>
+        <dd>Hours: Monday-Friday 9AM-6PM</dd>
+        
+        <dt>Technical Support</dt>
+        <dd>Phone: (555) 987-6543</dd>
+        <dd>Email: support@company.com</dd>
+        <dd>Hours: 24/7</dd>
+        
+        <dt>Human Resources</dt>
+        <dd>Phone: (555) 456-7890</dd>
+        <dd>Email: hr@company.com</dd>
+        <dd>Hours: Monday-Friday 8AM-5PM</dd>
+    </dl>
+    
+    <h2>Nested Description Lists</h2>
+    <dl>
+        <dt>Frontend Technologies</dt>
+        <dd>
+            Technologies used for client-side development:
+            <dl>
+                <dt>HTML</dt>
+                <dd>Structure and content</dd>
+                <dt>CSS</dt>
+                <dd>Styling and layout</dd>
+                <dt>JavaScript</dt>
+                <dd>Interactivity and behavior</dd>
+            </dl>
+        </dd>
+        
+        <dt>Backend Technologies</dt>
+        <dd>
+            Technologies used for server-side development:
+            <dl>
+                <dt>Node.js</dt>
+                <dd>JavaScript runtime for servers</dd>
+                <dt>Python</dt>
+                <dd>General-purpose programming language</dd>
+                <dt>PHP</dt>
+                <dd>Server-side scripting language</dd>
+            </dl>
+        </dd>
+    </dl>
+    
+    <h2>When to Use Description Lists</h2>
+    <ul>
+        <li><strong>Glossaries:</strong> Terms and their definitions</li>
+        <li><strong>FAQs:</strong> Questions and answers</li>
+        <li><strong>Specifications:</strong> Product features and details</li>
+        <li><strong>Metadata:</strong> Name-value pairs</li>
+        <li><strong>Contact information:</strong> Labels and contact details</li>
+        <li><strong>Dictionaries:</strong> Words and meanings</li>
+    </ul>
+    
+    <h2>Code Examples</h2>
+    
+    <h3>Basic Description List:</h3>
+    <pre>
+&lt;dl&gt;
+    &lt;dt&gt;Term 1&lt;/dt&gt;
+    &lt;dd&gt;Definition for term 1&lt;/dd&gt;
+    
+    &lt;dt&gt;Term 2&lt;/dt&gt;
+    &lt;dd&gt;Definition for term 2&lt;/dd&gt;
+&lt;/dl&gt;
+    </pre>
+    
+    <h3>Multiple Definitions:</h3>
+    <pre>
+&lt;dl&gt;
+    &lt;dt&gt;Term&lt;/dt&gt;
+    &lt;dd&gt;First definition&lt;/dd&gt;
+    &lt;dd&gt;Second definition&lt;/dd&gt;
+&lt;/dl&gt;
+    </pre>
+    
+    <h2>Best Practices</h2>
+    <ul>
+        <li><strong>Use for term-definition pairs:</strong> Perfect for glossaries and specifications</li>
+        <li><strong>Keep terms concise:</strong> Use brief, clear terms</li>
+        <li><strong>Provide complete definitions:</strong> Make definitions comprehensive</li>
+        <li><strong>Group related terms:</strong> Use separate lists for different topics</li>
+        <li><strong>Consider accessibility:</strong> Screen readers handle description lists well</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn MySQL - Database Technology</title>
+</head>
+<body>
+    <nav>
+        <p><a href="../web-dev.html">← Back to Web Development Overview</a> | 
+           <a href="../Back-End/nodejs.html">← Previous: Node.js</a> | 
+           <a href="mongodb.html">Next: MongoDB →</a></p>
+    </nav>
+    
+    <h1>🐬 MySQL</h1>
+    
+    <div>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL Logo" width="100" height="100">
+    </div>
+    
+    <h2>What is MySQL?</h2>
+    <p>MySQL is an open-source relational database management system (RDBMS) based on Structured Query Language (SQL). It's one of the most popular databases in the world, widely used for web applications and online publishing. MySQL is known for its reliability, performance, and ease of use.</p>
+    
+    <h2>🎯 Key Features of MySQL</h2>
+    <ul>
+        <li><strong>Open Source:</strong> Free to use and modify</li>
+        <li><strong>Cross-Platform:</strong> Runs on multiple operating systems</li>
+        <li><strong>ACID Compliant:</strong> Ensures data integrity and consistency</li>
+        <li><strong>High Performance:</strong> Fast query processing and optimization</li>
+        <li><strong>Scalable:</strong> Handles large amounts of data efficiently</li>
+        <li><strong>Secure:</strong> Built-in security features and user management</li>
+        <li><strong>Reliable:</strong> Proven stability in production environments</li>
+    </ul>
+    
+    <h2>🏗️ MySQL Basics</h2>
+    
+    <h3>Installation and Setup:</h3>
+    <pre>
+-- Check MySQL version
+SELECT VERSION();
+
+-- Show databases
+SHOW DATABASES;
+
+-- Create database
+CREATE DATABASE myapp;
+
+-- Use database
+USE myapp;
+
+-- Show tables
+SHOW TABLES;
+    </pre>
+    
+    <h3>Data Types:</h3>
+    <ul>
+        <li><strong>Numeric:</strong> INT, BIGINT, DECIMAL, FLOAT, DOUBLE</li>
+        <li><strong>String:</strong> VARCHAR, CHAR, TEXT, LONGTEXT</li>
+        <li><strong>Date/Time:</strong> DATE, TIME, DATETIME, TIMESTAMP</li>
+        <li><strong>Boolean:</strong> BOOLEAN (TINYINT(1))</li>
+        <li><strong>JSON:</strong> JSON (MySQL 5.7+)</li>
+        <li><strong>Binary:</strong> BLOB, LONGBLOB</li>
+    </ul>
+    
+    <h2>📊 Database Design and Tables</h2>
+    
+    <h3>Creating Tables:</h3>
+    <pre>
+-- Create users table
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(150) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    age INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+-- Create posts table
+CREATE TABLE posts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(200) NOT NULL,
+    content TEXT,
+    user_id INT,
+    published BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+-- Create categories table
+CREATE TABLE categories (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    description TEXT
+);
+
+-- Create many-to-many relationship table
+CREATE TABLE post_categories (
+    post_id INT,
+    category_id INT,
+    PRIMARY KEY (post_id, category_id),
+    FOREIGN KEY (post_id) REFERENCES posts(id) ON DELETE CASCADE,
+    FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE CASCADE
+);
+    </pre>
+    
+    <h3>Modifying Tables:</h3>
+    <pre>
+-- Add column
+ALTER TABLE users ADD COLUMN phone VARCHAR(20);
+
+-- Modify column
+ALTER TABLE users MODIFY COLUMN name VARCHAR(150);
+
+-- Drop column
+ALTER TABLE users DROP COLUMN phone;
+
+-- Add index
+CREATE INDEX idx_email ON users(email);
+
+-- Add foreign key
+ALTER TABLE posts ADD CONSTRAINT fk_user 
+FOREIGN KEY (user_id) REFERENCES users(id);
+    </pre>
+    
+    <h2>🔍 SQL Queries (CRUD Operations)</h2>
+    
+    <h3>INSERT - Creating Data:</h3>
+    <pre>
+-- Insert single record
+INSERT INTO users (name, email, password, age) 
+VALUES ('John Doe', 'john@example.com', 'hashed_password', 30);
+
+-- Insert multiple records
+INSERT INTO users (name, email, password, age) VALUES
+('Jane Smith', 'jane@example.com', 'hashed_password', 25),
+('Bob Johnson', 'bob@example.com', 'hashed_password', 35),
+('Alice Brown', 'alice@example.com', 'hashed_password', 28);
+
+-- Insert with SELECT
+INSERT INTO categories (name, description)
+SELECT DISTINCT category, 'Auto-generated category' 
+FROM temp_posts;
+    </pre>
+    
+    <h3>SELECT - Reading Data:</h3>
+    <pre>
+-- Basic SELECT
+SELECT * FROM users;
+SELECT name, email FROM users;
+
+-- WHERE clause
+SELECT * FROM users WHERE age > 25;
+SELECT * FROM users WHERE name LIKE 'J%';
+SELECT * FROM users WHERE age BETWEEN 25 AND 35;
+
+-- ORDER BY
+SELECT * FROM users ORDER BY name ASC;
+SELECT * FROM users ORDER BY created_at DESC;
+
+-- LIMIT
+SELECT * FROM users LIMIT 10;
+SELECT * FROM users LIMIT 5 OFFSET 10;
+
+-- GROUP BY and HAVING
+SELECT age, COUNT(*) as count 
+FROM users 
+GROUP BY age 
+HAVING count > 1;
+    </pre>
+    
+    <h3>UPDATE - Modifying Data:</h3>
+    <pre>
+-- Update single record
+UPDATE users 
+SET age = 31 
+WHERE id = 1;
+
+-- Update multiple records
+UPDATE users 
+SET age = age + 1 
+WHERE created_at < '2023-01-01';
+
+-- Update with JOIN
+UPDATE users u
+JOIN posts p ON u.id = p.user_id
+SET u.name = CONCAT(u.name, ' (Author)')
+WHERE p.published = TRUE;
+    </pre>
+    
+    <h3>DELETE - Removing Data:</h3>
+    <pre>
+-- Delete specific records
+DELETE FROM users WHERE age < 18;
+
+-- Delete with JOIN
+DELETE u FROM users u
+LEFT JOIN posts p ON u.id = p.user_id
+WHERE p.id IS NULL;
+
+-- Truncate table (faster for all records)
+TRUNCATE TABLE temp_data;
+    </pre>
+    
+    <h2>🔗 Advanced SQL Concepts</h2>
+    
+    <h3>JOINs:</h3>
+    <pre>
+-- INNER JOIN
+SELECT u.name, p.title
+FROM users u
+INNER JOIN posts p ON u.id = p.user_id;
+
+-- LEFT JOIN
+SELECT u.name, COUNT(p.id) as post_count
+FROM users u
+LEFT JOIN posts p ON u.id = p.user_id
+GROUP BY u.id, u.name;
+
+-- RIGHT JOIN
+SELECT u.name, p.title
+FROM users u
+RIGHT JOIN posts p ON u.id = p.user_id;
+
+-- Multiple JOINs
+SELECT u.name, p.title, c.name as category
+FROM users u
+JOIN posts p ON u.id = p.user_id
+JOIN post_categories pc ON p.id = pc.post_id
+JOIN categories c ON pc.category_id = c.id;
+    </pre>
+    
+    <h3>Subqueries:</h3>
+    <pre>
+-- Subquery in WHERE
+SELECT * FROM users 
+WHERE id IN (SELECT user_id FROM posts WHERE published = TRUE);
+
+-- Subquery in SELECT
+SELECT name, 
+       (SELECT COUNT(*) FROM posts WHERE user_id = users.id) as post_count
+FROM users;
+
+-- EXISTS
+SELECT * FROM users u
+WHERE EXISTS (SELECT 1 FROM posts p WHERE p.user_id = u.id);
+    </pre>
+    
+    <h3>Window Functions (MySQL 8.0+):</h3>
+    <pre>
+-- ROW_NUMBER
+SELECT name, age,
+       ROW_NUMBER() OVER (ORDER BY age DESC) as rank
+FROM users;
+
+-- RANK and DENSE_RANK
+SELECT name, age,
+       RANK() OVER (ORDER BY age DESC) as rank,
+       DENSE_RANK() OVER (ORDER BY age DESC) as dense_rank
+FROM users;
+
+-- Partition by
+SELECT name, age, department,
+       AVG(age) OVER (PARTITION BY department) as dept_avg_age
+FROM employees;
+    </pre>
+    
+    <h2>📈 Indexes and Performance</h2>
+    
+    <h3>Creating Indexes:</h3>
+    <pre>
+-- Single column index
+CREATE INDEX idx_email ON users(email);
+
+-- Composite index
+CREATE INDEX idx_name_age ON users(name, age);
+
+-- Unique index
+CREATE UNIQUE INDEX idx_unique_email ON users(email);
+
+-- Full-text index
+CREATE FULLTEXT INDEX idx_content ON posts(title, content);
+
+-- Show indexes
+SHOW INDEX FROM users;
+    </pre>
+    
+    <h3>Query Optimization:</h3>
+    <pre>
+-- Explain query execution plan
+EXPLAIN SELECT * FROM users WHERE email = 'john@example.com';
+
+-- Analyze table
+ANALYZE TABLE users;
+
+-- Optimize table
+OPTIMIZE TABLE users;
+
+-- Show query performance
+SHOW PROFILES;
+SET profiling = 1;
+SELECT * FROM users WHERE age > 25;
+SHOW PROFILE;
+    </pre>
+    
+    <h2>🔐 Security and User Management</h2>
+    
+    <h3>User Management:</h3>
+    <pre>
+-- Create user
+CREATE USER 'appuser'@'localhost' IDENTIFIED BY 'strong_password';
+
+-- Grant privileges
+GRANT SELECT, INSERT, UPDATE, DELETE ON myapp.* TO 'appuser'@'localhost';
+
+-- Grant all privileges
+GRANT ALL PRIVILEGES ON myapp.* TO 'admin'@'localhost';
+
+-- Show grants
+SHOW GRANTS FOR 'appuser'@'localhost';
+
+-- Revoke privileges
+REVOKE DELETE ON myapp.* FROM 'appuser'@'localhost';
+
+-- Drop user
+DROP USER 'appuser'@'localhost';
+
+-- Flush privileges
+FLUSH PRIVILEGES;
+    </pre>
+    
+    <h3>Security Best Practices:</h3>
+    <ul>
+        <li><strong>Use strong passwords:</strong> Complex passwords for database users</li>
+        <li><strong>Principle of least privilege:</strong> Grant minimum required permissions</li>
+        <li><strong>Regular updates:</strong> Keep MySQL updated</li>
+        <li><strong>Secure connections:</strong> Use SSL/TLS for connections</li>
+        <li><strong>Backup regularly:</strong> Regular database backups</li>
+        <li><strong>Monitor access:</strong> Log and monitor database access</li>
+    </ul>
+    
+    <h2>💾 Backup and Recovery</h2>
+    
+    <h3>Backup Commands:</h3>
+    <pre>
+-- Backup single database
+mysqldump -u username -p myapp > myapp_backup.sql
+
+-- Backup multiple databases
+mysqldump -u username -p --databases db1 db2 > multiple_backup.sql
+
+-- Backup all databases
+mysqldump -u username -p --all-databases > all_backup.sql
+
+-- Backup with compression
+mysqldump -u username -p myapp | gzip > myapp_backup.sql.gz
+
+-- Backup specific tables
+mysqldump -u username -p myapp users posts > tables_backup.sql
+    </pre>
+    
+    <h3>Restore Commands:</h3>
+    <pre>
+-- Restore database
+mysql -u username -p myapp < myapp_backup.sql
+
+-- Restore compressed backup
+gunzip < myapp_backup.sql.gz | mysql -u username -p myapp
+
+-- Create database and restore
+mysql -u username -p -e "CREATE DATABASE myapp_restored;"
+mysql -u username -p myapp_restored < myapp_backup.sql
+    </pre>
+    
+    <h2>🌐 MySQL with Web Applications</h2>
+    
+    <h3>Node.js Integration:</h3>
+    <pre>
+const mysql = require('mysql2/promise');
+
+// Create connection
+const connection = await mysql.createConnection({
+    host: 'localhost',
+    user: 'appuser',
+    password: 'password',
+    database: 'myapp'
+});
+
+// Execute queries
+const [rows] = await connection.execute(
+    'SELECT * FROM users WHERE age > ?',
+    [25]
+);
+
+// Insert data
+const [result] = await connection.execute(
+    'INSERT INTO users (name, email, age) VALUES (?, ?, ?)',
+    ['John Doe', 'john@example.com', 30]
+);
+
+console.log('Inserted ID:', result.insertId);
+    </pre>
+    
+    <h3>Python Integration:</h3>
+    <pre>
+import mysql.connector
+
+# Create connection
+connection = mysql.connector.connect(
+    host='localhost',
+    user='appuser',
+    password='password',
+    database='myapp'
+)
+
+cursor = connection.cursor()
+
+# Execute query
+cursor.execute("SELECT * FROM users WHERE age > %s", (25,))
+results = cursor.fetchall()
+
+for row in results:
+    print(row)
+
+# Insert data
+cursor.execute(
+    "INSERT INTO users (name, email, age) VALUES (%s, %s, %s)",
+    ('Jane Doe', 'jane@example.com', 28)
+)
+
+connection.commit()
+connection.close()
+    </pre>
+    
+    <h2>🔧 MySQL Best Practices</h2>
+    <ol>
+        <li><strong>Use appropriate data types:</strong> Choose the right data type for each column</li>
+        <li><strong>Normalize your database:</strong> Reduce data redundancy</li>
+        <li><strong>Use indexes wisely:</strong> Index frequently queried columns</li>
+        <li><strong>Avoid SELECT *:</strong> Select only needed columns</li>
+        <li><strong>Use prepared statements:</strong> Prevent SQL injection</li>
+        <li><strong>Regular maintenance:</strong> Optimize and analyze tables regularly</li>
+        <li><strong>Monitor performance:</strong> Use slow query log</li>
+        <li><strong>Backup regularly:</strong> Implement backup strategy</li>
+    </ol>
+    
+    <h2>⚡ MySQL Performance Tuning</h2>
+    
+    <h3>Configuration Optimization:</h3>
+    <pre>
+-- Key MySQL configuration variables
+SET GLOBAL innodb_buffer_pool_size = 1073741824; -- 1GB
+SET GLOBAL query_cache_size = 67108864; -- 64MB
+SET GLOBAL max_connections = 200;
+SET GLOBAL innodb_log_file_size = 268435456; -- 256MB
+
+-- Show current configuration
+SHOW VARIABLES LIKE 'innodb_buffer_pool_size';
+SHOW VARIABLES LIKE 'query_cache%';
+    </pre>
+    
+    <h3>Query Optimization Tips:</h3>
+    <ul>
+        <li><strong>Use LIMIT:</strong> Limit result sets when possible</li>
+        <li><strong>Avoid functions in WHERE:</strong> Don't use functions on indexed columns</li>
+        <li><strong>Use EXISTS instead of IN:</strong> For better performance with subqueries</li>
+        <li><strong>Optimize JOINs:</strong> Ensure proper indexes on JOIN columns</li>
+        <li><strong>Use UNION ALL:</strong> Instead of UNION when duplicates are acceptable</li>
+    </ul>
+    
+    <h2>📖 Learning Resources</h2>
+    <ul>
+        <li><a href="https://dev.mysql.com/doc/" target="_blank">Official MySQL Documentation</a></li>
+        <li><a href="https://www.w3schools.com/sql/" target="_blank">W3Schools SQL Tutorial</a></li>
+        <li><a href="https://sqlbolt.com/" target="_blank">SQLBolt Interactive Tutorial</a></li>
+        <li><a href="https://www.codecademy.com/learn/learn-sql" target="_blank">Codecademy SQL Course</a></li>
+        <li><a href="https://www.coursera.org/specializations/mysql" target="_blank">Coursera MySQL Specialization</a></li>
+        <li><a href="https://www.udemy.com/topic/mysql/" target="_blank">Udemy MySQL Courses</a></li>
+    </ul>
+    
+    <h2>💡 Why Learn MySQL?</h2>
+    <ul>
+        <li><strong>Industry Standard:</strong> Widely used in web development</li>
+        <li><strong>Open Source:</strong> Free to use and learn</li>
+        <li><strong>High Performance:</strong> Fast and reliable database system</li>
+        <li><strong>Scalable:</strong> Handles small to large applications</li>
+        <li><strong>Community Support:</strong> Large community and resources</li>
+        <li><strong>Career Essential:</strong> Required skill for many developer roles</li>
+        <li><strong>Integration:</strong> Works well with all major programming languages</li>
+        <li><strong>Cloud Ready:</strong> Available on all major cloud platforms</li>
+    </ul>
+    
+    <h2>🔗 Related Technologies</h2>
+    <ul>
+        <li><a href="../Back-End/python.html">← Python - Backend Development</a></li>
+        <li><a href="../Back-End/nodejs.html">← Node.js - JavaScript Backend</a></li>
+        <li><a href="../Back-End/java.html">← Java - Enterprise Backend</a></li>
+        <li><a href="mongodb.html">MongoDB - NoSQL Database →</a></li>
+    </ul>
+    
+    <hr>
+    
+    <footer>
+        <p><strong>Navigation:</strong></p>
+        <ul>
+            <li><a href="../web-dev.html">← Back to Web Development Overview</a></li>
+            <li><a href="../Back-End/nodejs.html">← Previous: Node.js</a></li>
+            <li><a href="mongodb.html">Next: Learn MongoDB →</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

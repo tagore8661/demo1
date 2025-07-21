@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic vs Presentational Elements</title>
+</head>
+<body>
+    <h1>Semantic vs Presentational Elements</h1>
+    
+    <h2>What's the Difference?</h2>
+    
+    <h3>Semantic Elements</h3>
+    <p>Semantic elements convey <strong>meaning</strong> about the content:</p>
+    <ul>
+        <li><strong>&lt;strong&gt;</strong> - Indicates importance</li>
+        <li><strong>&lt;em&gt;</strong> - Indicates emphasis/stress</li>
+        <li><strong>&lt;mark&gt;</strong> - Indicates highlighted/relevant text</li>
+        <li><strong>&lt;del&gt;</strong> - Indicates deleted/removed content</li>
+        <li><strong>&lt;ins&gt;</strong> - Indicates inserted/added content</li>
+        <li><strong>&lt;abbr&gt;</strong> - Indicates abbreviation</li>
+        <li><strong>&lt;blockquote&gt;</strong> - Indicates quoted content</li>
+    </ul>
+    
+    <h3>Presentational Elements</h3>
+    <p>Presentational elements only affect <strong>appearance</strong>:</p>
+    <ul>
+        <li><strong>&lt;b&gt;</strong> - Makes text bold</li>
+        <li><strong>&lt;i&gt;</strong> - Makes text italic</li>
+        <li><strong>&lt;u&gt;</strong> - Makes text underlined</li>
+        <li><strong>&lt;small&gt;</strong> - Makes text smaller</li>
+    </ul>
+    
+    <h2>Examples and Comparisons</h2>
+    
+    <h3>Bold vs Strong</h3>
+    <p>This is <b>bold text</b> - just looks bold</p>
+    <p>This is <strong>important text</strong> - conveys importance</p>
+    
+    <!-- 
+    Screen readers will:
+    - Read <b> text normally
+    - Emphasize <strong> text to indicate importance
+    -->
+    
+    <h3>Italic vs Emphasis</h3>
+    <p>This is <i>italic text</i> - just looks italic</p>
+    <p>This is <em>emphasized text</em> - conveys stress/emphasis</p>
+    
+    <!-- 
+    Screen readers will:
+    - Read <i> text normally
+    - Use vocal stress for <em> text
+    -->
+    
+    <h2>When to Use Each</h2>
+    
+    <h3>Use Semantic Elements When:</h3>
+    <ul>
+        <li>The content has special meaning or importance</li>
+        <li>You want screen readers to convey that meaning</li>
+        <li>You want search engines to understand the content better</li>
+        <li>The meaning matters more than the appearance</li>
+    </ul>
+    
+    <h3>Use Presentational Elements When:</h3>
+    <ul>
+        <li>You only need visual styling without semantic meaning</li>
+        <li>The content doesn't have special importance or emphasis</li>
+        <li>You're styling for purely visual reasons</li>
+    </ul>
+    
+    <h2>Real-World Examples</h2>
+    
+    <h3>Good Semantic Usage:</h3>
+    <p><strong>Warning:</strong> This action cannot be undone!</p>
+    <p>The word <em>semantic</em> comes from Greek.</p>
+    <p>I <mark>highlighted</mark> the important parts of the document.</p>
+    
+    <h3>Good Presentational Usage:</h3>
+    <p>The <b>Bold</b> font family is popular in design.</p>
+    <p>The book title was printed in <i>italics</i>.</p>
+    
+    <h2>Accessibility Impact</h2>
+    
+    <h3>Screen Reader Behavior:</h3>
+    <ul>
+        <li><strong>&lt;strong&gt;</strong> - Announced with emphasis</li>
+        <li><strong>&lt;em&gt;</strong> - Read with vocal stress</li>
+        <li><strong>&lt;b&gt;</strong> - Read normally (no special emphasis)</li>
+        <li><strong>&lt;i&gt;</strong> - Read normally (no special emphasis)</li>
+    </ul>
+    
+    <h2>SEO Impact</h2>
+    <p>Search engines give more weight to semantic elements:</p>
+    <ul>
+        <li><strong>&lt;strong&gt;</strong> content is considered more important</li>
+        <li><strong>&lt;em&gt;</strong> content indicates emphasis</li>
+        <li><strong>&lt;b&gt;</strong> and <strong>&lt;i&gt;</strong> have minimal SEO impact</li>
+    </ul>
+    
+    <h2>Best Practices</h2>
+    <ol>
+        <li><strong>Prefer semantic elements</strong> when the meaning matches</li>
+        <li><strong>Use presentational elements</strong> only for visual styling</li>
+        <li><strong>Don't use elements just for their default styling</strong></li>
+        <li><strong>Consider accessibility</strong> - how will screen readers interpret your content?</li>
+        <li><strong>Think about meaning first</strong>, then appearance</li>
+    </ol>
+    
+    <blockquote>
+        <p><em>Remember:</em> HTML should describe the <strong>structure and meaning</strong> of your content, not just its appearance. CSS is for styling!</p>
+    </blockquote>
+</body>
+</html>

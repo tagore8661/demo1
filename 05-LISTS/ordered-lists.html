@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Ordered Lists</title>
+</head>
+<body>
+    <h1>HTML Ordered Lists (ol)</h1>
+    
+    <h2>Basic Ordered List</h2>
+    <p>An ordered list displays items in a numbered sequence:</p>
+    <ol>
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+        <li>Fourth item</li>
+    </ol>
+    
+    <h2>Recipe Example</h2>
+    <h3>How to Make Chocolate Chip Cookies</h3>
+    <ol>
+        <li>Preheat oven to 375°F (190°C)</li>
+        <li>Mix flour, baking soda, and salt in a bowl</li>
+        <li>Cream butter and sugars in a separate bowl</li>
+        <li>Beat in eggs and vanilla extract</li>
+        <li>Gradually add flour mixture</li>
+        <li>Stir in chocolate chips</li>
+        <li>Drop spoonfuls of dough onto baking sheet</li>
+        <li>Bake for 9-11 minutes until golden brown</li>
+        <li>Cool on baking sheet for 2 minutes</li>
+        <li>Transfer to wire rack to cool completely</li>
+    </ol>
+    
+    <h2>Different Numbering Types</h2>
+    
+    <h3>Default Numbers (1, 2, 3...)</h3>
+    <ol>
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+    </ol>
+    
+    <h3>Uppercase Letters (A, B, C...)</h3>
+    <ol type="A">
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+    </ol>
+    
+    <h3>Lowercase Letters (a, b, c...)</h3>
+    <ol type="a">
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+    </ol>
+    
+    <h3>Uppercase Roman Numerals (I, II, III...)</h3>
+    <ol type="I">
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+    </ol>
+    
+    <h3>Lowercase Roman Numerals (i, ii, iii...)</h3>
+    <ol type="i">
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+    </ol>
+    
+    <h2>Starting from Different Numbers</h2>
+    
+    <h3>Starting from 5</h3>
+    <ol start="5">
+        <li>Fifth item</li>
+        <li>Sixth item</li>
+        <li>Seventh item</li>
+    </ol>
+    
+    <h3>Starting from 10 with Roman Numerals</h3>
+    <ol type="I" start="10">
+        <li>Tenth item</li>
+        <li>Eleventh item</li>
+        <li>Twelfth item</li>
+    </ol>
+    
+    <h2>Reversed Ordering</h2>
+    <h3>Countdown List</h3>
+    <ol reversed>
+        <li>Launch rocket</li>
+        <li>Final systems check</li>
+        <li>Fuel loading complete</li>
+        <li>Crew boarding</li>
+        <li>Pre-flight preparations</li>
+    </ol>
+    
+    <h2>Custom Value for Specific Items</h2>
+    <ol>
+        <li>First step</li>
+        <li>Second step</li>
+        <li value="10">Jump to step 10</li>
+        <li>Step 11 (continues from previous)</li>
+        <li>Step 12</li>
+    </ol>
+    
+    <h2>Practical Examples</h2>
+    
+    <h3>Software Installation Steps</h3>
+    <ol>
+        <li>Download the installer from the official website</li>
+        <li>Run the installer as administrator</li>
+        <li>Accept the license agreement</li>
+        <li>Choose installation directory</li>
+        <li>Select components to install</li>
+        <li>Wait for installation to complete</li>
+        <li>Restart your computer if prompted</li>
+        <li>Launch the application</li>
+    </ol>
+    
+    <h3>Emergency Evacuation Procedure</h3>
+    <ol type="A">
+        <li>Remain calm and do not panic</li>
+        <li>Stop what you are doing immediately</li>
+        <li>Leave personal belongings behind</li>
+        <li>Walk quickly to the nearest exit</li>
+        <li>Use stairs, never elevators</li>
+        <li>Proceed to the designated assembly point</li>
+        <li>Wait for further instructions</li>
+        <li>Do not re-enter the building until cleared</li>
+    </ol>
+    
+    <h3>Academic Paper Structure</h3>
+    <ol type="I">
+        <li>Introduction
+            <ol type="A">
+                <li>Background information</li>
+                <li>Problem statement</li>
+                <li>Research objectives</li>
+            </ol>
+        </li>
+        <li>Literature Review</li>
+        <li>Methodology
+            <ol type="A">
+                <li>Research design</li>
+                <li>Data collection</li>
+                <li>Analysis methods</li>
+            </ol>
+        </li>
+        <li>Results and Discussion</li>
+        <li>Conclusion</li>
+        <li>References</li>
+    </ol>
+    
+    <h2>List Attributes Summary</h2>
+    <table border="1">
+        <tr>
+            <th>Attribute</th>
+            <th>Description</th>
+            <th>Values</th>
+            <th>Example</th>
+        </tr>
+        <tr>
+            <td>type</td>
+            <td>Numbering style</td>
+            <td>1, A, a, I, i</td>
+            <td>&lt;ol type="A"&gt;</td>
+        </tr>
+        <tr>
+            <td>start</td>
+            <td>Starting number</td>
+            <td>Any positive integer</td>
+            <td>&lt;ol start="5"&gt;</td>
+        </tr>
+        <tr>
+            <td>reversed</td>
+            <td>Reverse order</td>
+            <td>reversed (boolean)</td>
+            <td>&lt;ol reversed&gt;</td>
+        </tr>
+        <tr>
+            <td>value</td>
+            <td>Custom value for &lt;li&gt;</td>
+            <td>Any integer</td>
+            <td>&lt;li value="10"&gt;</td>
+        </tr>
+    </table>
+    
+    <h2>When to Use Ordered Lists</h2>
+    <ul>
+        <li><strong>Sequential processes:</strong> Recipes, instructions, procedures</li>
+        <li><strong>Ranked items:</strong> Top 10 lists, rankings, priorities</li>
+        <li><strong>Step-by-step guides:</strong> Tutorials, how-to guides</li>
+        <li><strong>Chronological events:</strong> Timelines, historical events</li>
+        <li><strong>Hierarchical structures:</strong> Outlines, academic papers</li>
+    </ul>
+    
+    <h2>Code Examples</h2>
+    
+    <h3>Basic Ordered List:</h3>
+    <pre>
+&lt;ol&gt;
+    &lt;li&gt;First item&lt;/li&gt;
+    &lt;li&gt;Second item&lt;/li&gt;
+    &lt;li&gt;Third item&lt;/li&gt;
+&lt;/ol&gt;
+    </pre>
+    
+    <h3>Ordered List with Attributes:</h3>
+    <pre>
+&lt;ol type="A" start="3" reversed&gt;
+    &lt;li&gt;Item C&lt;/li&gt;
+    &lt;li&gt;Item B&lt;/li&gt;
+    &lt;li&gt;Item A&lt;/li&gt;
+&lt;/ol&gt;
+    </pre>
+    
+    <h2>Best Practices</h2>
+    <ol>
+        <li><strong>Use for sequential content:</strong> Only use ordered lists when order matters</li>
+        <li><strong>Keep items parallel:</strong> Use similar sentence structure for all items</li>
+        <li><strong>Be concise:</strong> Keep list items brief and to the point</li>
+        <li><strong>Consider accessibility:</strong> Screen readers announce the numbering</li>
+        <li><strong>Use appropriate numbering:</strong> Choose the type that fits your content</li>
+    </ol>
+</body>
+</html>

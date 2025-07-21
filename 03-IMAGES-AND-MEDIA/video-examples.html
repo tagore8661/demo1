@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Video Examples</title>
+</head>
+<body>
+    <h1>HTML Video Examples</h1>
+    
+    <h2>Basic Video Element</h2>
+    <p>The HTML5 video element allows you to embed video content in web pages.</p>
+    
+    <h3>Basic Video with Controls</h3>
+    <video width="400" height="300" controls>
+        <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4">
+        <source src="https://sample-videos.com/zip/10/webm/SampleVideo_1280x720_1mb.webm" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
+    <p>This video player has basic controls (play, pause, volume, progress, fullscreen).</p>
+    
+    <h2>Video Attributes</h2>
+    
+    <h3>Video with Poster Image</h3>
+    <video width="400" height="300" controls poster="https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=400">
+        <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4">
+        <source src="https://sample-videos.com/zip/10/webm/SampleVideo_1280x720_1mb.webm" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
+    <p>This video shows a poster image before playing.</p>
+    
+    <h3>Muted Autoplay Video</h3>
+    <video width="400" height="300" controls autoplay muted>
+        <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4">
+        <source src="https://sample-videos.com/zip/10/webm/SampleVideo_1280x720_1mb.webm" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
+    <p><strong>Note:</strong> Autoplay only works when muted due to browser policies.</p>
+    
+    <h3>Looping Video</h3>
+    <video width="400" height="300" controls loop>
+        <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4">
+        <source src="https://sample-videos.com/zip/10/webm/SampleVideo_1280x720_1mb.webm" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
+    <p>This video will loop continuously when played.</p>
+    
+    <h2>Video Attributes Explained</h2>
+    <table border="1">
+        <tr>
+            <th>Attribute</th>
+            <th>Description</th>
+            <th>Values</th>
+        </tr>
+        <tr>
+            <td>controls</td>
+            <td>Shows video controls</td>
+            <td>controls (boolean)</td>
+        </tr>
+        <tr>
+            <td>autoplay</td>
+            <td>Starts playing automatically</td>
+            <td>autoplay (boolean)</td>
+        </tr>
+        <tr>
+            <td>loop</td>
+            <td>Repeats the video</td>
+            <td>loop (boolean)</td>
+        </tr>
+        <tr>
+            <td>muted</td>
+            <td>Starts muted</td>
+            <td>muted (boolean)</td>
+        </tr>
+        <tr>
+            <td>poster</td>
+            <td>Image shown before play</td>
+            <td>URL</td>
+        </tr>
+        <tr>
+            <td>preload</td>
+            <td>How much to preload</td>
+            <td>none, metadata, auto</td>
+        </tr>
+        <tr>
+            <td>width</td>
+            <td>Video width</td>
+            <td>pixels</td>
+        </tr>
+        <tr>
+            <td>height</td>
+            <td>Video height</td>
+            <td>pixels</td>
+        </tr>
+    </table>
+    
+    <h2>Video Formats and Browser Support</h2>
+    
+    <h3>Common Video Formats:</h3>
+    <table border="1">
+        <tr>
+            <th>Format</th>
+            <th>MIME Type</th>
+            <th>Browser Support</th>
+            <th>Quality</th>
+            <th>File Size</th>
+        </tr>
+        <tr>
+            <td>MP4 (H.264)</td>
+            <td>video/mp4</td>
+            <td>Excellent</td>
+            <td>Good</td>
+            <td>Medium</td>
+        </tr>
+        <tr>
+            <td>WebM (VP8/VP9)</td>
+            <td>video/webm</td>
+            <td>Chrome, Firefox</td>
+            <td>Good</td>
+            <td>Small</td>
+        </tr>
+        <tr>
+            <td>OGV (Theora)</td>
+            <td>video/ogg</td>
+            <td>Firefox, Chrome</td>
+            <td>Fair</td>
+            <td>Large</td>
+        </tr>
+        <tr>
+            <td>AVI</td>
+            <td>video/avi</td>
+            <td>Limited</td>
+            <td>Variable</td>
+            <td>Large</td>
+        </tr>
+        <tr>
+            <td>MOV</td>
+            <td>video/quicktime</td>
+            <td>Safari</td>
+            <td>Good</td>
+            <td>Large</td>
+        </tr>
+    </table>
+    
+    <h2>Responsive Video</h2>
+    <video width="100%" height="auto" controls style="max-width: 600px;">
+        <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4">
+        <source src="https://sample-videos.com/zip/10/webm/SampleVideo_1280x720_1mb.webm" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
+    <p>This video is responsive and will scale with the container width.</p>
+    
+    <h2>Video Without Controls</h2>
+    <video id="customVideo" width="400" height="300">
+        <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4">
+        <source src="https://sample-videos.com/zip/10/webm/SampleVideo_1280x720_1mb.webm" type="video/webm">
+    </video>
+    <br>
+    <button onclick="document.getElementById('customVideo').play()">Play</button>
+    <button onclick="document.getElementById('customVideo').pause()">Pause</button>
+    <button onclick="document.getElementById('customVideo').currentTime = 0">Reset</button>
+    <button onclick="toggleMute()">Toggle Mute</button>
+    
+    <script>
+        function toggleMute() {
+            var video = document.getElementById('customVideo');
+            video.muted = !video.muted;
+        }
+    </script>
+    <p>Custom controls using JavaScript to control video playback.</p>
+    
+    <h2>Preload Options</h2>
+    
+    <h3>preload="none"</h3>
+    <video width="300" height="200" controls preload="none">
+        <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4">
+    </video>
+    <p>No preloading - saves bandwidth but may have delay when playing.</p>
+    
+    <h3>preload="metadata"</h3>
+    <video width="300" height="200" controls preload="metadata">
+        <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4">
+    </video>
+    <p>Preloads only metadata (duration, dimensions) - good balance.</p>
+    
+    <h3>preload="auto"</h3>
+    <video width="300" height="200" controls preload="auto">
+        <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4">
+    </video>
+    <p>Preloads the entire video - fastest playback but uses more bandwidth.</p>
+    
+    <h2>Video with Subtitles/Captions</h2>
+    <video width="400" height="300" controls>
+        <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4">
+        <track kind="subtitles" src="subtitles-en.vtt" srclang="en" label="English" default>
+        <track kind="subtitles" src="subtitles-es.vtt" srclang="es" label="Spanish">
+        Your browser does not support the video tag.
+    </video>
+    <p>This video includes subtitle tracks (VTT files would need to be provided).</p>
+    
+    <h2>Embedded Video (YouTube Example)</h2>
+    <iframe width="400" height="300" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen>
+    </iframe>
+    <p>Embedded YouTube video using iframe (not HTML5 video element).</p>
+    
+    <h2>Video Formats Recommendation</h2>
+    <ol>
+        <li><strong>MP4 (H.264)</strong> - Primary format for widest compatibility</li>
+        <li><strong>WebM</strong> - Secondary format for better compression</li>
+        <li><strong>Provide both</strong> for optimal browser support</li>
+    </ol>
+    
+    <h2>Accessibility Considerations</h2>
+    <ul>
+        <li><strong>Provide captions</strong> for hearing-impaired users</li>
+        <li><strong>Include transcripts</strong> for important video content</li>
+        <li><strong>Use descriptive poster images</strong></li>
+        <li><strong>Don't autoplay videos</strong> with sound</li>
+        <li><strong>Ensure keyboard navigation</strong> works with custom controls</li>
+        <li><strong>Provide alternative formats</strong> for different needs</li>
+    </ul>
+    
+    <h2>Best Practices</h2>
+    <ol>
+        <li><strong>Always include multiple formats</strong> for browser compatibility</li>
+        <li><strong>Use MP4 as your primary format</strong></li>
+        <li><strong>Optimize videos for web</strong> (compress appropriately)</li>
+        <li><strong>Include poster images</strong> for better user experience</li>
+        <li><strong>Consider mobile users</strong> - smaller file sizes</li>
+        <li><strong>Test across different browsers</strong> and devices</li>
+        <li><strong>Provide fallback content</strong> for unsupported browsers</li>
+        <li><strong>Use appropriate dimensions</strong> for your layout</li>
+    </ol>
+    
+    <h2>Common Use Cases</h2>
+    <ul>
+        <li><strong>Product demonstrations</strong> and tutorials</li>
+        <li><strong>Background videos</strong> for hero sections</li>
+        <li><strong>Educational content</strong> and courses</li>
+        <li><strong>Marketing videos</strong> and advertisements</li>
+        <li><strong>Entertainment content</strong> and media</li>
+        <li><strong>Live streaming</strong> (with additional technologies)</li>
+    </ul>
+</body>
+</html>

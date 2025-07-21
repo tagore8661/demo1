@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Bootstrap - Frontend Framework</title>
+</head>
+<body>
+    <nav>
+        <p><a href="../web-dev.html">← Back to Web Development Overview</a> | 
+           <a href="js.html">← Previous: JavaScript</a> | 
+           <a href="../Back-End/python.html">Next: Backend Technologies →</a></p>
+    </nav>
+    
+    <h1>🅱️ Bootstrap</h1>
+    
+    <div>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap Logo" width="100" height="100">
+    </div>
+    
+    <h2>What is Bootstrap?</h2>
+    <p>Bootstrap is the world's most popular CSS framework for building responsive, mobile-first websites. It provides pre-built components, utilities, and a flexible grid system that helps developers create professional-looking websites quickly.</p>
+    
+    <h2>🎯 Key Features of Bootstrap</h2>
+    <ul>
+        <li><strong>Responsive Grid System:</strong> 12-column flexible grid layout</li>
+        <li><strong>Pre-built Components:</strong> Buttons, forms, navigation, modals, etc.</li>
+        <li><strong>Mobile-First Approach:</strong> Designed for mobile devices first</li>
+        <li><strong>Cross-Browser Compatible:</strong> Works consistently across browsers</li>
+        <li><strong>Customizable:</strong> Easy to customize with Sass variables</li>
+        <li><strong>Extensive Documentation:</strong> Comprehensive guides and examples</li>
+    </ul>
+    
+    <h2>🏗️ Getting Started with Bootstrap</h2>
+    
+    <h3>CDN Installation (Quick Start):</h3>
+    <pre>
+&lt;!-- CSS --&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+
+&lt;!-- JavaScript --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+    </pre>
+    
+    <h3>npm Installation:</h3>
+    <pre>
+npm install bootstrap
+    </pre>
+    
+    <h3>Basic HTML Template:</h3>
+    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Bootstrap Page&lt;/title&gt;
+    &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;h1&gt;Hello, Bootstrap!&lt;/h1&gt;
+    &lt;/div&gt;
+    &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+    
+    <h2>📐 Bootstrap Grid System</h2>
+    
+    <h3>Container Classes:</h3>
+    <ul>
+        <li><strong>.container:</strong> Fixed-width container</li>
+        <li><strong>.container-fluid:</strong> Full-width container</li>
+        <li><strong>.container-sm/md/lg/xl/xxl:</strong> Responsive containers</li>
+    </ul>
+    
+    <h3>Grid Classes:</h3>
+    <ul>
+        <li><strong>.row:</strong> Creates a row</li>
+        <li><strong>.col:</strong> Equal-width columns</li>
+        <li><strong>.col-{number}:</strong> Specific column width (1-12)</li>
+        <li><strong>.col-{breakpoint}-{number}:</strong> Responsive columns</li>
+    </ul>
+    
+    <h3>Breakpoints:</h3>
+    <ul>
+        <li><strong>xs:</strong> &lt;576px (extra small devices)</li>
+        <li><strong>sm:</strong> ≥576px (small devices)</li>
+        <li><strong>md:</strong> ≥768px (medium devices)</li>
+        <li><strong>lg:</strong> ≥992px (large devices)</li>
+        <li><strong>xl:</strong> ≥1200px (extra large devices)</li>
+        <li><strong>xxl:</strong> ≥1400px (extra extra large devices)</li>
+    </ul>
+    
+    <h3>Grid Example:</h3>
+    <pre>
+&lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-md-8"&gt;Main content&lt;/div&gt;
+        &lt;div class="col-md-4"&gt;Sidebar&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+    </pre>
+    
+    <h2>🎨 Bootstrap Components</h2>
+    
+    <h3>Buttons:</h3>
+    <ul>
+        <li><strong>.btn:</strong> Base button class</li>
+        <li><strong>.btn-primary:</strong> Primary button style</li>
+        <li><strong>.btn-secondary:</strong> Secondary button style</li>
+        <li><strong>.btn-success:</strong> Success button style</li>
+        <li><strong>.btn-danger:</strong> Danger button style</li>
+        <li><strong>.btn-lg/sm:</strong> Large/small button sizes</li>
+    </ul>
+    
+    <h3>Navigation:</h3>
+    <ul>
+        <li><strong>.navbar:</strong> Navigation bar</li>
+        <li><strong>.nav:</strong> Navigation component</li>
+        <li><strong>.breadcrumb:</strong> Breadcrumb navigation</li>
+        <li><strong>.pagination:</strong> Pagination component</li>
+    </ul>
+    
+    <h3>Cards:</h3>
+    <ul>
+        <li><strong>.card:</strong> Card container</li>
+        <li><strong>.card-header:</strong> Card header</li>
+        <li><strong>.card-body:</strong> Card body content</li>
+        <li><strong>.card-footer:</strong> Card footer</li>
+        <li><strong>.card-img-top:</strong> Card image</li>
+    </ul>
+    
+    <h3>Forms:</h3>
+    <ul>
+        <li><strong>.form-control:</strong> Form input styling</li>
+        <li><strong>.form-label:</strong> Form label styling</li>
+        <li><strong>.form-select:</strong> Select dropdown styling</li>
+        <li><strong>.form-check:</strong> Checkbox/radio styling</li>
+        <li><strong>.input-group:</strong> Input group component</li>
+    </ul>
+    
+    <h2>🎭 Bootstrap Utilities</h2>
+    
+    <h3>Spacing Utilities:</h3>
+    <ul>
+        <li><strong>m-{size}:</strong> Margin (0-5)</li>
+        <li><strong>p-{size}:</strong> Padding (0-5)</li>
+        <li><strong>mt/mb/ms/me:</strong> Margin top/bottom/start/end</li>
+        <li><strong>pt/pb/ps/pe:</strong> Padding top/bottom/start/end</li>
+    </ul>
+    
+    <h3>Display Utilities:</h3>
+    <ul>
+        <li><strong>.d-none:</strong> Hide element</li>
+        <li><strong>.d-block:</strong> Block display</li>
+        <li><strong>.d-inline:</strong> Inline display</li>
+        <li><strong>.d-flex:</strong> Flexbox display</li>
+        <li><strong>.d-{breakpoint}-{display}:</strong> Responsive display</li>
+    </ul>
+    
+    <h3>Text Utilities:</h3>
+    <ul>
+        <li><strong>.text-center:</strong> Center text</li>
+        <li><strong>.text-start/end:</strong> Align text left/right</li>
+        <li><strong>.text-primary:</strong> Primary text color</li>
+        <li><strong>.text-uppercase:</strong> Uppercase text</li>
+        <li><strong>.fw-bold:</strong> Bold font weight</li>
+    </ul>
+    
+    <h3>Background Utilities:</h3>
+    <ul>
+        <li><strong>.bg-primary:</strong> Primary background color</li>
+        <li><strong>.bg-secondary:</strong> Secondary background color</li>
+        <li><strong>.bg-success:</strong> Success background color</li>
+        <li><strong>.bg-light:</strong> Light background color</li>
+        <li><strong>.bg-dark:</strong> Dark background color</li>
+    </ul>
+    
+    <h2>📱 Responsive Features</h2>
+    
+    <h3>Responsive Utilities:</h3>
+    <ul>
+        <li><strong>.d-{breakpoint}-none:</strong> Hide on specific breakpoints</li>
+        <li><strong>.col-{breakpoint}-{number}:</strong> Responsive columns</li>
+        <li><strong>.text-{breakpoint}-center:</strong> Responsive text alignment</li>
+        <li><strong>.justify-content-{breakpoint}-center:</strong> Responsive flexbox</li>
+    </ul>
+    
+    <h3>Mobile-First Approach:</h3>
+    <pre>
+&lt;!-- Stack on mobile, side-by-side on tablet and up --&gt;
+&lt;div class="row"&gt;
+    &lt;div class="col-12 col-md-6"&gt;Column 1&lt;/div&gt;
+    &lt;div class="col-12 col-md-6"&gt;Column 2&lt;/div&gt;
+&lt;/div&gt;
+    </pre>
+    
+    <h2>🎪 Interactive Components</h2>
+    
+    <h3>Modal Example:</h3>
+    <pre>
+&lt;!-- Button trigger modal --&gt;
+&lt;button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"&gt;
+    Launch demo modal
+&lt;/button&gt;
+
+&lt;!-- Modal --&gt;
+&lt;div class="modal fade" id="exampleModal"&gt;
+    &lt;div class="modal-dialog"&gt;
+        &lt;div class="modal-content"&gt;
+            &lt;div class="modal-header"&gt;
+                &lt;h5 class="modal-title"&gt;Modal title&lt;/h5&gt;
+                &lt;button type="button" class="btn-close" data-bs-dismiss="modal"&gt;&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class="modal-body"&gt;
+                Modal body content
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+    </pre>
+    
+    <h3>Carousel Example:</h3>
+    <pre>
+&lt;div id="carouselExample" class="carousel slide" data-bs-ride="carousel"&gt;
+    &lt;div class="carousel-inner"&gt;
+        &lt;div class="carousel-item active"&gt;
+            &lt;img src="image1.jpg" class="d-block w-100" alt="..."&gt;
+        &lt;/div&gt;
+        &lt;div class="carousel-item"&gt;
+            &lt;img src="image2.jpg" class="d-block w-100" alt="..."&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+    </pre>
+    
+    <h2>🎨 Customizing Bootstrap</h2>
+    
+    <h3>CSS Custom Properties:</h3>
+    <pre>
+:root {
+    --bs-primary: #007bff;
+    --bs-secondary: #6c757d;
+    --bs-success: #28a745;
+}
+    </pre>
+    
+    <h3>Sass Customization:</h3>
+    <pre>
+// Custom variables
+$primary: #007bff;
+$secondary: #6c757d;
+
+// Import Bootstrap
+@import "node_modules/bootstrap/scss/bootstrap";
+    </pre>
+    
+    <h2>🛠️ Bootstrap Ecosystem</h2>
+    
+    <h3>Bootstrap Themes:</h3>
+    <ul>
+        <li><strong>Bootswatch:</strong> Free Bootstrap themes</li>
+        <li><strong>Bootstrap Studio:</strong> Visual Bootstrap builder</li>
+        <li><strong>Start Bootstrap:</strong> Free Bootstrap templates</li>
+        <li><strong>Creative Tim:</strong> Premium Bootstrap themes</li>
+    </ul>
+    
+    <h3>Bootstrap Extensions:</h3>
+    <ul>
+        <li><strong>Bootstrap Icons:</strong> Official icon library</li>
+        <li><strong>Bootstrap Table:</strong> Enhanced table component</li>
+        <li><strong>Bootstrap Datepicker:</strong> Date picker component</li>
+        <li><strong>Bootstrap Select:</strong> Enhanced select component</li>
+    </ul>
+    
+    <h2>⚡ Bootstrap vs Other Frameworks</h2>
+    
+    <h3>Bootstrap vs Tailwind CSS:</h3>
+    <ul>
+        <li><strong>Bootstrap:</strong> Component-based, faster development</li>
+        <li><strong>Tailwind:</strong> Utility-first, more customizable</li>
+    </ul>
+    
+    <h3>Bootstrap vs Foundation:</h3>
+    <ul>
+        <li><strong>Bootstrap:</strong> Larger community, more themes</li>
+        <li><strong>Foundation:</strong> More flexible, advanced features</li>
+    </ul>
+    
+    <h3>Bootstrap vs Bulma:</h3>
+    <ul>
+        <li><strong>Bootstrap:</strong> JavaScript components included</li>
+        <li><strong>Bulma:</strong> CSS-only, modern flexbox-based</li>
+    </ul>
+    
+    <h2>📖 Bootstrap Best Practices</h2>
+    <ol>
+        <li><strong>Use the grid system:</strong> Leverage Bootstrap's responsive grid</li>
+        <li><strong>Don't override core styles:</strong> Use custom CSS classes instead</li>
+        <li><strong>Customize with Sass:</strong> Use variables for consistent theming</li>
+        <li><strong>Optimize bundle size:</strong> Import only needed components</li>
+        <li><strong>Test responsiveness:</strong> Check all breakpoints</li>
+        <li><strong>Follow naming conventions:</strong> Use Bootstrap's class naming patterns</li>
+        <li><strong>Keep accessibility in mind:</strong> Use semantic HTML with Bootstrap classes</li>
+    </ol>
+    
+    <h2>📖 Learning Resources</h2>
+    <ul>
+        <li><a href="https://getbootstrap.com/" target="_blank">Official Bootstrap Documentation</a></li>
+        <li><a href="https://www.w3schools.com/bootstrap5/" target="_blank">W3Schools Bootstrap Tutorial</a></li>
+        <li><a href="https://bootstrap-cheatsheet.themeselection.com/" target="_blank">Bootstrap Cheat Sheet</a></li>
+        <li><a href="https://bootswatch.com/" target="_blank">Bootswatch - Free Bootstrap Themes</a></li>
+        <li><a href="https://icons.getbootstrap.com/" target="_blank">Bootstrap Icons</a></li>
+        <li><a href="https://startbootstrap.com/" target="_blank">Start Bootstrap - Free Templates</a></li>
+    </ul>
+    
+    <h2>💡 Why Learn Bootstrap?</h2>
+    <ul>
+        <li><strong>Rapid Development:</strong> Build responsive sites quickly</li>
+        <li><strong>Industry Standard:</strong> Widely used in web development</li>
+        <li><strong>Consistent Design:</strong> Professional-looking interfaces</li>
+        <li><strong>Mobile-First:</strong> Built for responsive design</li>
+        <li><strong>Large Community:</strong> Extensive resources and support</li>
+        <li><strong>Easy Learning Curve:</strong> Simple to get started</li>
+        <li><strong>Career Advantage:</strong> Valuable skill for frontend developers</li>
+    </ul>
+    
+    <h2>🔗 Related Technologies</h2>
+    <ul>
+        <li><a href="html.html">← HTML - Structure and Content</a></li>
+        <li><a href="css.html">← CSS - Styling and Layout</a></li>
+        <li><a href="js.html">← JavaScript - Interactivity</a></li>
+        <li><a href="../Back-End/python.html">Python - Backend Development →</a></li>
+    </ul>
+    
+    <hr>
+    
+    <footer>
+        <p><strong>Navigation:</strong></p>
+        <ul>
+            <li><a href="../web-dev.html">← Back to Web Development Overview</a></li>
+            <li><a href="js.html">← Previous: JavaScript</a></li>
+            <li><a href="../Back-End/python.html">Next: Learn Python →</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

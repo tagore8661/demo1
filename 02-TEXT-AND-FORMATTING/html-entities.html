@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Entities and Special Characters</title>
+</head>
+<body>
+    <h1>HTML Entities and Special Characters</h1>
+    
+    <h2>What are HTML Entities?</h2>
+    <p>HTML entities are used to display special characters that have special meaning in HTML or characters that are not easily typed on a keyboard.</p>
+    
+    <h2>Basic HTML Entities</h2>
+    <table border="1">
+        <tr>
+            <th>Character</th>
+            <th>Entity Name</th>
+            <th>Entity Number (Decimal)</th>
+            <th>Entity Number (Hexadecimal)</th>
+        </tr>
+        <tr>
+            <td>&lt;</td>
+            <td>&amp;lt;</td>
+            <td>&amp;#60;</td>
+            <td>&amp;#x3C;</td>
+        </tr>
+        <tr>
+            <td>&gt;</td>
+            <td>&amp;gt;</td>
+            <td>&amp;#62;</td>
+            <td>&amp;#x3E;</td>
+        </tr>
+        <tr>
+            <td>&amp;</td>
+            <td>&amp;amp;</td>
+            <td>&amp;#38;</td>
+            <td>&amp;#x26;</td>
+        </tr>
+        <tr>
+            <td>&quot;</td>
+            <td>&amp;quot;</td>
+            <td>&amp;#34;</td>
+            <td>&amp;#x22;</td>
+        </tr>
+        <tr>
+            <td>&apos;</td>
+            <td>&amp;apos;</td>
+            <td>&amp;#39;</td>
+            <td>&amp;#x27;</td>
+        </tr>
+    </table>
+    
+    <h2>Non-Breaking Space</h2>
+    <p>Regular spaces can break at line endings, but&nbsp;non-breaking&nbsp;spaces&nbsp;keep&nbsp;words&nbsp;together.</p>
+    <p>Entity: &amp;nbsp; or &amp;#160;</p>
+    
+    <h2>Currency Symbols</h2>
+    <ul>
+        <li>Dollar: $ (&amp;#36;)</li>
+        <li>Euro: &euro; (&amp;euro; or &amp;#8364;)</li>
+        <li>Pound: &pound; (&amp;pound; or &amp;#163;)</li>
+        <li>Yen: &yen; (&amp;yen; or &amp;#165;)</li>
+        <li>Cent: &cent; (&amp;cent; or &amp;#162;)</li>
+    </ul>
+    
+    <h2>Copyright and Legal Symbols</h2>
+    <ul>
+        <li>Copyright: &copy; (&amp;copy; or &amp;#169;)</li>
+        <li>Registered: &reg; (&amp;reg; or &amp;#174;)</li>
+        <li>Trademark: &trade; (&amp;trade; or &amp;#8482;)</li>
+        <li>Section: &sect; (&amp;sect; or &amp;#167;)</li>
+        <li>Paragraph: &para; (&amp;para; or &amp;#182;)</li>
+    </ul>
+    
+    <h2>Mathematical Symbols</h2>
+    <ul>
+        <li>Plus-minus: &plusmn; (&amp;plusmn; or &amp;#177;)</li>
+        <li>Multiplication: &times; (&amp;times; or &amp;#215;)</li>
+        <li>Division: &divide; (&amp;divide; or &amp;#247;)</li>
+        <li>Not equal: &ne; (&amp;ne; or &amp;#8800;)</li>
+        <li>Less than or equal: &le; (&amp;le; or &amp;#8804;)</li>
+        <li>Greater than or equal: &ge; (&amp;ge; or &amp;#8805;)</li>
+    </ul>
+    
+    <h2>Arrows and Symbols</h2>
+    <ul>
+        <li>Left arrow: &larr; (&amp;larr; or &amp;#8592;)</li>
+        <li>Right arrow: &rarr; (&amp;rarr; or &amp;#8594;)</li>
+        <li>Up arrow: &uarr; (&amp;uarr; or &amp;#8593;)</li>
+        <li>Down arrow: &darr; (&amp;darr; or &amp;#8595;)</li>
+        <li>Heart: &hearts; (&amp;hearts; or &amp;#9829;)</li>
+        <li>Spade: &spades; (&amp;spades; or &amp;#9824;)</li>
+    </ul>
+    
+    <h2>Accented Characters</h2>
+    <ul>
+        <li>&Aacute; &aacute; (&amp;Aacute; &amp;aacute;)</li>
+        <li>&Eacute; &eacute; (&amp;Eacute; &amp;eacute;)</li>
+        <li>&Iacute; &iacute; (&amp;Iacute; &amp;iacute;)</li>
+        <li>&Oacute; &oacute; (&amp;Oacute; &amp;oacute;)</li>
+        <li>&Uacute; &uacute; (&amp;Uacute; &amp;uacute;)</li>
+        <li>&ntilde; (&amp;ntilde;)</li>
+    </ul>
+    
+    <h2>Emojis (Unicode)</h2>
+    <p>Modern browsers support Unicode emojis:</p>
+    <ul>
+        <li>😀 (&amp;#128512;) - Grinning face</li>
+        <li>❤️ (&amp;#10084;) - Red heart</li>
+        <li>👍 (&amp;#128077;) - Thumbs up</li>
+        <li>🌟 (&amp;#127775;) - Star</li>
+        <li>🎉 (&amp;#127881;) - Party popper</li>
+    </ul>
+    
+    <h2>Abbreviations</h2>
+    <p>The <abbr title="HyperText Markup Language">HTML</abbr> specification defines many entities.</p>
+    <p><abbr title="Cascading Style Sheets">CSS</abbr> is used for styling.</p>
+    <p><abbr title="JavaScript">JS</abbr> adds interactivity to web pages.</p>
+    
+    <h2>Entity Format Types</h2>
+    <ol>
+        <li><strong>Named entities:</strong> &amp;name; (e.g., &amp;copy;)</li>
+        <li><strong>Decimal entities:</strong> &amp;#number; (e.g., &amp;#169;)</li>
+        <li><strong>Hexadecimal entities:</strong> &amp;#xnumber; (e.g., &amp;#xA9;)</li>
+    </ol>
+    
+    <p><strong>Note:</strong> Always end entities with a semicolon (;)</p>
+</body>
+</html>
